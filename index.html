@@ -8,19 +8,41 @@
 </head>
 <body>
 
+  <div id="pictureContainer"></div>
+  <div id="detailContainer"></div>
+  <div id="addEditContainer"></div>
 
 
 
 
 
+  <script type="x-tmpl-mustache" id="urlTemplate">
+    {{#data}}
+      {{url}}
+    {{/data}}
+
+
+  </script>
+
+  <script type="x-tmpl-mustache" id="detailTemplate">
 
 
 
- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  </script>
+
+  <script type="x-tmpl-mustache" id="addEditTemplate">
+
+
+
+
+  </script>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>
-
   <script type="text/javascript" src="backbone-parse.js"></script>
   <script type="text/javascript" src="main.js"></script>
 
