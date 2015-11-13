@@ -30,16 +30,23 @@
 
   <script type="x-tmpl-mustache" id="urlTemplate">
     {{#data}}
-        <a href="/image/{{objectId}}"><img src="{{url}}"></a>
+
+      <a href="/image/{{objectId}}"><img src="{{url}}"></a>
+
     {{/data}}
   </script>
 
   <script type="x-tmpl-mustache" id="detailTemplate">
+    <div class="details">
     {{#data}}
       <img src="{{url}}">
-      <p>{{detail}}</p>
-      <p>{{title}}</p>
+      <div id="description">
+        <p> {{user}} </p>
+        <p>{{title}} -</p>
+        <p>{{detail}}</p>
+      </div>
     {{/data}}
+    </div>
   </script>
 
   <script type="x-tmpl-mustache" id="addEditTemplate">

@@ -2,6 +2,7 @@ var Container = Backbone.Model.extend({
   initialize: function(){
   },
   defaults: {
+    user: null,
     url: null,
     detail: null,
     title: null
@@ -33,7 +34,7 @@ var Router = Backbone.Router.extend({
   initialize: function(){
     Backbone.history.start({pushState: true});
   },
-    route: {
+    routes: {
       "image/:objectId": "image",
       "": "index"
   }
@@ -41,6 +42,27 @@ var Router = Backbone.Router.extend({
 
 var router = new Router();
 
+router.on("route:image", function(objectId) {
+  var image = new Container({objectId: objectId});
+  image.fetch({
+    success: function(resp){
+      var data2obj = {"data": resp.toJSON()};
+      var detailTemplate = $("#detailTemplate").text();
+      var detailHTML = Mustache.render(detailTemplate, data2obj);
+      $("#detailContainer").html(detailHTML);
+      $("#pictureContainer").hide();
+      $("#detailContainer").show();
+      console.log("success", resp);
+    }, error: function(err) {
+      console.log("error", err);
+    }
+  });
+});
+
+router.on('route:index', function(){
+  $("#detailContainer").hide();
+  $("#pictureContainer").show();
+});
 
 $('body').on('click','a', function(e){
   e.preventDefault();
