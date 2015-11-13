@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MyMeme</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+<div id="memesDiv"></div>
+
+<script id="memeTemplate" type="x-tmpl-mustache">
+	{{#data}}
+		<div><img src="{{url}}"</div>
+	{{/data}}
+	
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>
+<script src="backbone-parse.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
