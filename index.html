@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+  
+  <div id="picturePage"></div>
+  <div id="detailPage"></div>
+  <div id="editPage"></div>
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="backbone-parse.js"></script>
+  <script src="main.js"></script>
+  
+  <script type="x-tmpl-mustache" id="animalPicTemplate">
+    {{#mAnimalPics}}
+    <ul>
+    <li><img src="{{url}}"/></li>
+    </ul>
+    {{/mAnimalPics}}
+    </script>
+    
+   <!--<script type="x-tmpl-mustache" id="animalDetailTemplate">
+    {{#mAnimalDetail}}
+        
+    {{/mAnimalDetail}}
+    </script>
+    
+    <script type="x-tmpl-mustache" id="animalEditTemplate">
+    {{#mAnimalEdit}}
+    {{/mAnimalEdit}}
+    </script>-->
+  
+</body>
+</html>
