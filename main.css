@@ -96,4 +96,12 @@ li {
 
 #addForm input {
 	display: block;
+	width:300px;
+	padding-top: 20px;
+	font-size: 14px;
+}
+
+#submitBtn {
+	height:40px;
+	width:100px;
 }
