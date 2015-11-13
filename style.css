@@ -1,0 +1,53 @@
+body {
+   background-color: #fafafa;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: relative;
+  bottom: 20px;
+  background-color: white;
+}
+
+#title {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  color: #004879;
+  position: relative;
+  top: 2em;
+}
+
+#home {
+  position: relative;
+  bottom: 1em;
+  left: 10em;
+}
+
+#home a {
+  color: #004879;
+}
+
+#logIn {
+  position: relative;
+  bottom: 2em;
+  left: 67em;
+}
+
+#logIn a {
+  color: #004879;
+}
+
+#pictureContainer {
+  width: 1000px;
+  margin: auto;
+}
+
+img {
+  height: 291.672px;
+  width: 291.672px;
+  padding: 10px;
+  border-style: none;
+}

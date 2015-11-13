@@ -3,11 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Assingment 20</title>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="normalize.css">
+
 </head>
 <body>
-
+  <div class="header">
+  <div id="title">
+    <h1>Nickstagram</h1>
+  </div>
+  <div id="home">
+    <a href="#">Home</a>
+  </div>
+  <div id="logIn">
+    <a href="#">Log In</a>
+  </div>
+</div>
   <div id="pictureContainer"></div>
   <div id="detailContainer"></div>
   <div id="addEditContainer"></div>
@@ -18,10 +30,8 @@
 
   <script type="x-tmpl-mustache" id="urlTemplate">
     {{#data}}
-      {{url}}
+        <a href="#"><img src="{{url}}"></a>
     {{/data}}
-
-
   </script>
 
   <script type="x-tmpl-mustache" id="detailTemplate">
