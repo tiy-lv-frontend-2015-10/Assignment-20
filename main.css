@@ -1,12 +1,22 @@
 .imgMeme {
 	width:225px;
 	height:225px;
-	
+	border: 1px solid black;
+	border-radius:10px;
 
 }
 
-li {
+#nav {
+
+	background:red;
+	text-align: center;
+}
+#nav li{
+	display: inline;
+}
+.images {
 	float: left;
 	list-style: none;
+	margin:10px;
 }
 

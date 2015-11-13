@@ -6,14 +6,30 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-
+<div id="nav">
+	<ul>
+		<li>Home</li>
+		<li>Detail</li>
+		<li>Add</li>
+	</ul>
+</div>
 <div id="memesDiv"></div>
+
+<script id="memesTemplate" type="x-tmpl-mustache">
+	{{#data}}
+		<ul>
+		<li class="images"><a href="/meme/{{objectId}}"><img class="imgMeme" src="{{url}}"</li></a>
+		</ul>
+	{{/data}}
+	
+</script>
 
 <script id="memeTemplate" type="x-tmpl-mustache">
 	{{#data}}
 		<ul>
-		<li><img class="imgMeme"src="{{url}}"</li>
+		<li>{{}}</li>
 		</ul>
+		
 	{{/data}}
 	
 </script>
