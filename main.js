@@ -41,4 +41,34 @@ var Router = Backbone.Router.extend({
 
 var router = new Router();
 
-router.on('route:image')
+
+$('body').on('click','a', function(e){
+  e.preventDefault();
+  var href = $(this).attr('href');
+  href = href.substr(1);
+  router.navigate(href, {trigger:true});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
