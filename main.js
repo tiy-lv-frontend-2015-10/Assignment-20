@@ -43,6 +43,7 @@ $(document).ready(function(){
 	  routes: {
 	    "meme/:objectId":"meme",
 	    "":"index",
+	    "add":"add"
 	    
 	  }
 	});
@@ -51,9 +52,11 @@ $(document).ready(function(){
 
 	router.on('route:index', function() {
 		$("#memesDiv").show();
-		$("#memeDiv").hide();
+		$("#oneMemeDiv").hide();
+		$("#nav").css("width","730px");
+		$("#addForm").hide();
 
-	})
+	});
 
 	router.on('route:meme', function(objectId) {
 	  var meme = new Meme({objectId:objectId});
@@ -62,11 +65,22 @@ $(document).ready(function(){
 	  		var memeObj = {'data':resp.toJSON()};
 			var template2=$('#memeTemplate2').text();
 			var memeHTML = Mustache.render(template2,memeObj);
-			$("#memeDiv").html(memeHTML);
+			$("#oneMemeDiv").html(memeHTML);
 			$("#memesDiv").hide();
-			$("#memeDiv").show();
+			$("#oneMemeDiv").show();
+			$("#nav").css("width","1000px");
 
 	  	}
+
+
+	  });
+
+	  router.on('route:add', function() {
+	  	$("#memesDiv").hide();
+	  	$("#addForm").show();
+	  
+
+	  
 	  });
 	  
 

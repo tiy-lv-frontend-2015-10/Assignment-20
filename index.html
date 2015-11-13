@@ -10,16 +10,27 @@
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li>Detail</li>
-		<li>Add</li>
+		<li><a href="/add">Add</a></li>
 	</ul>
 </div>
 <div id="memesDiv"></div>
-<div id="memeDiv"></div>
+<div id="oneMemeDiv"></div>
+
+<div id="formDiv">
+	<form id="addForm">
+		<span>Title: </span><input id="title" placeholder="title"></input>	
+		<span>Description: </span><input></input>
+		<span>Url: </span><input></input>
+	</form>
+</div>
 
 <script id="memesTemplate" type="x-tmpl-mustache">
 	{{#data}}
 		
-		<a href="/meme/{{objectId}}"><div class="images"><img class="imgMeme" src="{{url}}"</div></a>
+	
+		<div class="images">
+			<a href="/meme/{{objectId}}"><img class="imgMeme" src="{{url}}"/></div></a>
+		
 		
 	{{/data}}
 	
@@ -31,6 +42,8 @@
 			<div><img class="imagesLarge"src="{{url}}"/></div>
 
 			<div id="description">
+			<img id="profileImg"src="/assets/default2.png"/><span id="user">{{user}}</span>
+			<hr id="line" />
 			<h3 id="title">{{title}}</h3>
 			<p>{{description}}</p></div>
 		</div>

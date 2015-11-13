@@ -1,5 +1,5 @@
 #memesDiv {
-	width:820px;
+	width:750px;
 	margin:auto;
 }
 
@@ -12,12 +12,22 @@
 }
 
 #nav {
-
-	background:red;
+	width:730px;
+	height:40px;
+	margin:auto;
+	background:#F7F7F7;
 	text-align: center;
 }
 #nav li{
 	display: inline;
+	position: relative;
+	top:10px;
+}
+a {
+	/*text-decoration: none;*/
+}
+a:visited {
+	color:black;
 }
 .images {
 	display: inline;
@@ -28,18 +38,22 @@
 .imagesLarge {
 	width:500px;
 	height: 500px;
+	border-radius:2px;
 	float: left;
 }
 
-#memeDiv {
-	display: none;
+#oneMemeDiv {
+	margin:auto;
+	width:1000px;
 }
 
 #description {
 	float: left;
 	width: 400px;
 	display: inline;
-	margin-left:15px;
+	margin-left:20px;
+	position: relative;
+	top:10px;
 }
 
 li {
@@ -54,4 +68,32 @@ li {
 #title {
 	margin:0;
 	padding:0;
+}
+
+#profileImg {
+	border-radius:20px;
+}
+
+#user {
+	position: absolute;
+	top:10px;
+	left:45px;
+	color:#155889;
+}
+
+#line {
+	height: 0px;
+	border:0px;
+	border-top:1px solid #EEEFEF;
+
+}
+
+#addForm {
+	display: none;
+	width:730px;
+	margin:auto;
+}
+
+#addForm input {
+	display: block;
 }
