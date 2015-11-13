@@ -18,20 +18,22 @@
 
 <script id="memesTemplate" type="x-tmpl-mustache">
 	{{#data}}
-		<ul>
-		<li class="images"><a href="/meme/{{objectId}}"><img class="imgMeme" src="{{url}}"</li></a>
-		</ul>
+		
+		<a href="/meme/{{objectId}}"><div class="images"><img class="imgMeme" src="{{url}}"</div></a>
+		
 	{{/data}}
 	
 </script>
 
 <script id="memeTemplate2" type="x-tmpl-mustache">
 	{{#data}}
-		<ul>
-		<li><img class="imagesLarge"src="{{url}}"/></li>
-		<li>{{description}}</li>
-		</ul>
-		
+		<div id="memeContainer">
+			<div><img class="imagesLarge"src="{{url}}"/></div>
+
+			<div id="description">
+			<h3 id="title">{{title}}</h3>
+			<p>{{description}}</p></div>
+		</div>
 	{{/data}}
 	
 </script>
