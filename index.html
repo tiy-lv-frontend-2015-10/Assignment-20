@@ -18,9 +18,17 @@
       </div>
       <div id="details"></div>
       <div id="home"></div>
-      <div id="add"></div>
+      <div id="add">
+        <form>
+          <input type="text"  id="url" value="">
+          <input type="text" id="decription" value="">
+          <input type="button" id="submit">
+        </form>
+      </div>
+
 
     </div>
+
 
 <script type = "x-tmpl-mustache" id = "homeTemplate">
 <ul class ="gifList">
@@ -31,20 +39,36 @@
 </script>
 
 <script type = "x-tmpl-mustache" id = "detailsTemplate">
-<p>
+<div>
 {{#details}}
-<img src="{{url}}">
-{{Description}}
+<img class ="large"src="{{url}}">
+<p><strong>{{Description}}.</strong></br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iusto similique, dicta architecto nihil, sunt debitis, ad nulla ipsa dolore libero consequuntur reiciendis animi et reprehenderit fugit vitae tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo molestiae, quae veritatis. Harum itaque, magni sequi obcaecati, voluptatum similique labore possimus praesentium autem porro veniam ullam et aliquam non, eaque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iusto similique, dicta architecto nihil, sunt debitis, ad nulla ipsa dolore libero consequuntur reiciendis animi et reprehenderit fugit vitae tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo molestiae, quae veritatis. Harum itaque, magni sequi obcaecati, voluptatum similique labore possimus praesentium autem porro veniam ullam et aliquam non, eaque.</p>
 {{/details}}
-</p>
+</div>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gifstagram.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </script>
 
-<script type = "x-tmpl-mustache" id = "addTemplate">
-{{#add}}
-<textarea>
-</textarea>
-{{/add}}
-</script>
 
 
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>

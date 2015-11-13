@@ -46,6 +46,18 @@ img{
 		float: left;
 		margin: 1em;
 }
+#details{
+	width: 80%;
+	margin: 0 10%;
+}
+#details strong{
+	font-size: 20px;
+}
+#details p {
+display: inline-block;
+width: 39em;
+float: right;
+}
 .large{
 	height: 500px;
 	width: 500px;

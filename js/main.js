@@ -15,7 +15,7 @@ var Gif = Backbone.Model.extend({
   })
 
   var GifCollection = new Gifs();
-
+  var gif = new Gif();
   GifCollection.fetch({
    success: function(resp) {
       var gifObj = {"gifs" : resp.toJSON()};
@@ -27,6 +27,19 @@ var Gif = Backbone.Model.extend({
           console.log("error: ", err);
         }
   });
+      $("#submit").on("click", function(){
+      var gif = new Gif();
+      gif.set({
+        url: $("#url").val(),
+        Description: $("#decription").val()
+      })
+ 	    gif.save(null, {
+      success: function(resp){
+      },error: function(err){
+        console.log("error ", err);
+      }
+       })
+      });
 
   var Router = Backbone.Router.extend({
     initialize: function(){
@@ -60,28 +73,17 @@ router.on('route:details', function(objectId){
   router.on('route:index', function(){
     $("#home").show();
     $("#details").hide();
+    $("#add").hide();
   });
 
   router.on("route:edit", function () {
     console.log("edit");
   });
 
-
   router.on('route:add', function(){
-    var gifAdd = new Gif();
-    gifAdd.save({
-      success: function(resp){
-      var addObj = {'add': resp.toJSON()};
-      var addTemplate = $("#addTemplate").text();
-      var addHTML = Mustache.render(addTemplate, addObj);
-        $("#add").html(addHTML);
-        $("#home").hide();
-        $("#details").hide();
-        $("#add").show();
-      },error: function(err){
-        console.log("error ", err);
-      }
-  })
+    $("#add").show();
+    $("#home").hide();
+
   });
 
 
