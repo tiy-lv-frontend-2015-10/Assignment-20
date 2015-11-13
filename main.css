@@ -1,0 +1,20 @@
+#mainContainer{
+	width: 100%;
+	margin: auto;
+}
+
+#imageDiv{
+	width: 75%;
+	margin: auto;
+}
+
+.petImage li{
+	list-style: none;
+	position: relative;
+	display: inline-block;
+}
+
+.petImage img{
+	width: 300px;
+	height: 300px;
+}
