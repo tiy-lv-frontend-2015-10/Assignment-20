@@ -1,0 +1,52 @@
+body{
+	background-image: url("images/squared_metal.png");
+}
+h1{
+	font-family: "Lobster";
+	font-size: 50px;
+	color: #5298FC;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+
+#nav{
+	width: 80%;
+	margin: 0% 10%;
+	background-color: black;
+	height: 3em;
+
+}
+#nav li{
+	padding-top: .3em;
+	list-style: none;
+	float: left;
+	padding-left: 1em;
+	font-size: 25px;
+	margin:0 12%;
+}
+#home{
+	width: 80%;
+	margin: 0% 7%;
+	clear: both;
+}
+img{
+	width: 250px;
+	height: 250px;
+	border: 1px solid white;
+}
+
+.gifList{
+	list-style: none;
+	width: 75em;
+}
+.gifList li{
+		float: left;
+		margin: 1em;
+}
+.large{
+	height: 500px;
+	width: 500px;
+}
