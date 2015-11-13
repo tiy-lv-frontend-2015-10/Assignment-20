@@ -94,8 +94,12 @@ h1 {
 .descrip{
 	position: relative;
 	display: inline-block;
-	float: right;
+	float:right;
 	width: 400px;
+}
+
+#addDiv{
+	display: none;
 }
 
 #footer {

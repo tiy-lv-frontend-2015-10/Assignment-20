@@ -38,6 +38,26 @@ $(document).ready(function(){
 		}
 	});
 
+	$("saveBtn").on('click',function(){
+	var animal = new Pet();
+	animal.set({
+		url: null,
+		description: null
+	})
+		animal.save(null,{
+			success:function(resp){
+				console.log("success ", resp);
+				PetsCollection.fetch({
+					success: function(resp){
+					}, error: function(err){	
+					}
+				})
+			}, error: function(err){
+				console.log("error ", err);
+		}
+	})
+	});
+
 	var Router = Backbone.Router.extend({
 		initialize:function(){
 			Backbone.history.start({pushState: true});
@@ -69,14 +89,18 @@ $(document).ready(function(){
 		})
 	});
 	router.on('route:add', function(){
+		$("#addDiv").show();
+		$("#imageDiv").hide();
+		$("#descripDiv").hide();
 		console.log('add page');
 	});
 	router.on('route:edit', function(){
 		console.log('edit page');
 	});
 	router.on('route:index', function(){
-		$("#descripDiv").hide();
 		$("#imageDiv").show();
+		$("#descripDiv").hide();
+		$("#addDiv").hide();
 		console.log('home page');
 	});
 
