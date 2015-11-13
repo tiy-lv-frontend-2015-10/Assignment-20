@@ -31,4 +31,30 @@ $(document).ready(function (){
 
 	});
 
+//collection
+	var Router = Backbone.Router.extend ({
+		initialize: function(){
+
+		Backbone.history.start({pushState:true});
+			},
+			routes: {
+				"url/:objectId": "url",
+				"":"index"
+			}	 
+	});
+//individual
+	var router = new Router();
+
+	router.on('router:url', function(objectId) {
+		var info = new Picture({objectId:objectId});
+		info.fetch({
+			success:function(resp)
+				var picObj = {'description':resp.toJSON()};
+				var PicTemplate = $('#info')
+
+		}
+	});
+
+
+
 }); //doc.ready close
