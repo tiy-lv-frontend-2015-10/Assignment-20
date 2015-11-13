@@ -1,1 +1,28 @@
-body {}
+body {
+    background-color: #4e1804;
+    color: white;
+}
+
+li.mainPics {
+    list-style: none;
+}
+
+#listedPics {
+  
+}
+
+#listedPics li img {
+    display: inline;
+    float: left;
+    width: 300px;
+    height: 250px;
+}
+
+
+.mainPics {}
+
+.clearFloat {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}

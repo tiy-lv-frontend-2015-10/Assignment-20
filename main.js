@@ -10,8 +10,7 @@ $(document).ready(function() {
         _parse_class_name: "animal"
     });
     
-    //var Animal = new Animals();
-    
+    //collection
     var Animals = Backbone.Collection.extend({
         model: Animals,
         _parse_class_name: "animal"
@@ -27,6 +26,11 @@ $(document).ready(function() {
             $("#picturePage").html(animalHTML);
         }
     });
+    
+    //router
+    var router = new Router();
+    
+    router.on('route:name')
     
     
     
