@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 20</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+    <div id="header">
+        <div id="instagram-logo"><img src="assets/Instagram_Icon_Large.png"></div>
+        <div id="P"<h4>Fun Places</h4></div>
+        <a href="/">Home</a>
+        <a href="/add">Add</a>
+        <a href="/edit">Edit</a>
+    </div>
+
+
+    <div id="photos"></div>
+    <div id ="photosDetail">
+    <script type = "x-tmpl-mustache" id="photosTemplate">
+        {{#instagram}}
+            <a href="/details/{{objectId}}"><img class="home-photo" src="{{url}}" /></a>
+        {{/instagram}}
+    </script>
+
+
+
+    <div id="photosDetailpage"></div>
+    <script type = "x-tmpl-mustache" id="DescriptionTemplate">
+     
+            <img class="itemDescription" src="{{url}}"></img>
+            <p>{{description}}</p>
+   
+        
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+    <script src="js/backbone-parse.js"></script>
+    <script src="js/main.js"></script> 
+</body>
+</html>
