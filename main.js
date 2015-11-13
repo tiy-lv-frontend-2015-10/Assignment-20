@@ -50,7 +50,8 @@ $(document).ready(function(){
 	var router = new Router();
 
 	router.on('route:index', function() {
-		
+		$("#memesDiv").show();
+		$("#memeDiv").hide();
 
 	})
 
@@ -60,11 +61,13 @@ $(document).ready(function(){
 	  	success: function(resp){
 	  		var memeObj = {'data':resp.toJSON()};
 			var template2=$('#memeTemplate2').text();
-			var personHtml = Mustache.render(template2,memeObj);
-			
+			var memeHTML = Mustache.render(template2,memeObj);
+			$("#memeDiv").html(memeHTML);
+			$("#memesDiv").hide();
+			$("#memeDiv").show();
 
 	  	}
-	  })
+	  });
 	  
 
 	  

@@ -8,12 +8,13 @@
 <body>
 <div id="nav">
 	<ul>
-		<li>Home</li>
+		<li><a href="/">Home</a></li>
 		<li>Detail</li>
 		<li>Add</li>
 	</ul>
 </div>
 <div id="memesDiv"></div>
+<div id="memeDiv"></div>
 
 <script id="memesTemplate" type="x-tmpl-mustache">
 	{{#data}}
@@ -24,10 +25,11 @@
 	
 </script>
 
-<script id="memeTemplate" type="x-tmpl-mustache">
+<script id="memeTemplate2" type="x-tmpl-mustache">
 	{{#data}}
 		<ul>
-		<li>{{}}</li>
+		<li><img class="imagesLarge"src="{{url}}"/></li>
+		<li>{{description}}</li>
 		</ul>
 		
 	{{/data}}
