@@ -1,11 +1,12 @@
 $(document).ready(function() {
+    
     var Animals = Backbone.Model.extend({
         initialize: function() {
         },
         defaults: {
             Description: null,
-            Type: null,
-            URL: null
+            type: null,
+            url: null
         },
         _parse_class_name: "animal"
     });
@@ -28,9 +29,42 @@ $(document).ready(function() {
     });
     
     //router
-    var router = new Router();
+    var Router = Backbone.Router.extend ({
+        initialize:function(){
+            Backbone.history.start({pushState:true});
+        },
+            routes:{
+                "url/:objectId":"url",
+                "":"index"
+                //"Description/:objectId":"Description",
+                //"type/:objectId":"type"
+            }
+    });
     
-    router.on('route:name')
+    var router = new Router();
+    router.on('route:url', function(objectId){
+        var animalObj2 = {'mAnimalDescription': AnimalCollections.get(objectId).toJSON()};
+        var animalDescriptionTemplate = $("#animalDescriptionTemplate").text();
+        var animal2HTML = Mustache.render(animalDescriptionTemplate, animalObj2);
+        $("#detailPage").html(animal2HTML);
+        $("#picturePage").hide();
+        $("#detailPage").show();
+    });
+    
+    router.on('route:index', function(){
+        $("#picturePage").show();
+        $("#detailPage").hide();
+    });
+    
+    $("body").on('click', 'a', function(e){
+        e.preventDefault();
+        var href = $(this).attr('href');
+        href = href.substr(1);
+        router.navigate(href,{trigger:true});
+    });
+    
+    
+    
     
     
     

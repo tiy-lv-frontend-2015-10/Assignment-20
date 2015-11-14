@@ -7,9 +7,7 @@ li.mainPics {
     list-style: none;
 }
 
-#listedPics {
-  
-}
+#listedPics {}
 
 #listedPics li img {
     display: inline;

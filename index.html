@@ -27,10 +27,17 @@
   <script type="x-tmpl-mustache" id="animalPicTemplate">
     {{#mAnimalPics}}
     <ul id="listedPics">
-    <li class="mainPics"><img src="{{url}}"/></li>
+    <li class="mainPics"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></li>
     </ul>
     {{/mAnimalPics}}
-    </script>
+  </script>
+    
+  <script type="x-tmpl-mustache" id="animalDescriptionTemplate">
+    {{#mAnimalDescription}}
+    <p><a href="/url/{{objectId}}"><img src="{{url}}"/></a></p>
+    <p>{{Description}}</p>
+    {{/mAnimalDescription}}
+  </script>
     
    <!--<script type="x-tmpl-mustache" id="animalDetailTemplate">
     {{#mAnimalDetail}}
