@@ -24,7 +24,7 @@ $(document).ready(function() {
             var animalObj = {"mAnimalPics":response.toJSON()};
             var animalPicTemplate = $("#animalPicTemplate").text();
             var animalHTML = Mustache.render(animalPicTemplate, animalObj);
-            $("#picturePage").html(animalHTML);
+            $("#picturePageDiv").html(animalHTML);
         }
     });
     
@@ -46,14 +46,14 @@ $(document).ready(function() {
         var animalObj2 = {'mAnimalDescription': AnimalCollections.get(objectId).toJSON()};
         var animalDescriptionTemplate = $("#animalDescriptionTemplate").text();
         var animal2HTML = Mustache.render(animalDescriptionTemplate, animalObj2);
-        $("#detailPage").html(animal2HTML);
-        $("#picturePage").hide();
-        $("#detailPage").show();
+        $("#detailPageDiv").html(animal2HTML);
+        $("#picturePageDiv").hide();
+        $("#detailPageDiv").show();
     });
     
     router.on('route:index', function(){
-        $("#picturePage").show();
-        $("#detailPage").hide();
+        $("#picturePageDiv").show();
+        $("#detailPageDiv").hide();
     });
     
     $("body").on('click', 'a', function(e){

@@ -6,20 +6,34 @@ body {
     background: -moz-radial-gradient(circle, black, lightblue); /* Firefox 3.6 to 15 */
     background: radial-gradient(circle, black, lightblue); /* Standard syntax */    
 }
-
-
 #container {
     min-width: 1275px;
     max-width: 1300px;
 }
 
+header {}
 
-#picturePage {
+h1 {
+    text-align: center;
+    text-shadow: 3px 3px 1px black;
+}
+
+.headerButtons {
+    padding: 10px 15px;
+    color: black;
+    border-radius: 10%;
+    margin-left: 5px;
+}
+#homeBtn {
+    margin-left: 480px;
+}
+
+/*1st Page --- Main Pictures*/
+#picturePageDiv {
     margin: auto;
     width: 90%;
     padding: 10px;
 }
-
 
 .mainpics {
     text-align: center;
@@ -40,3 +54,26 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/*2nd Page --- Detail View*/
+#detailPageDiv {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.detailPics img {
+    width: 350px;
+    height: 275px;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.descStyle {
+    margin: 0 0 0 10em;
+    padding: 0 0 0 10em;
+}
+
+

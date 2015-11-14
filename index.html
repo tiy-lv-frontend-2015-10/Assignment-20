@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <title></title>
-    <link rel="stylesheet" href="">
+    <title>Animal Lovers Delight</title>
 </head>
 
 <body>
   <div id="container">
+  <div id="header">
+      <h1>ANIMAL LOVERS DELIGHT</h1>
+      <input id="homeBtn" class="headerButtons" type="button" name="button" value="Home" size="25">
+      <input class="headerButtons" type="button" name="button" value="Details" size="25">
+      <input class="headerButtons" type="button" name="button" value="Add" size="25">
+      <input class="headerButtons" type="button" name="button" value="Edit" size="25">
+  </div>
   
-  <div id="picturePage"></div>
-  <p class="clearFloat"></p>
-  <div id="detailPage"></div>
-  <div id="editPage"></div>
+  <div id="picturePageDiv"></div>
+
+  <div id="detailPageDiv"></div>
+  <div id="editPageDiv"></div>
   
     </div>
   
@@ -35,31 +41,24 @@
     {{/mAnimalPics}}
   </script>
     
-    <!-- <script type="x-tmpl-mustache" id="animalPicTemplate">
-    {{#mAnimalPics}}
-    <ul id="listedPics">
-    <li class="mainPics"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></li>
-    </ul>
-    {{/mAnimalPics}}
-  </script>-->
-    
   <script type="x-tmpl-mustache" id="animalDescriptionTemplate">
     {{#mAnimalDescription}}
-    <p><a href="/url/{{objectId}}"><img src="{{url}}"/></a></p>
-    <p>{{Description}}</p>
+    <p class="detailPics floatLeft"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></p>
+    <p class="clearFloat"></p>
+    <p class="descStyle">{{Description}}</p>
     {{/mAnimalDescription}}
   </script>
     
-   <!--<script type="x-tmpl-mustache" id="animalDetailTemplate">
-    {{#mAnimalDetail}}
-        
-    {{/mAnimalDetail}}
-    </script>
-    
-    <script type="x-tmpl-mustache" id="animalEditTemplate">
-    {{#mAnimalEdit}}
-    {{/mAnimalEdit}}
-    </script>-->
+<script type="x-tepl-mustache" id="animalAddTemplate">
+{{#mAnimalEdit}}
+{{/mAnimalEdit}}  
+</script>
+  
+<script type="x-tmpl-mustache" id="animalEditTemplate">
+{{#mAnimalAdd}}
+{{/mAnimalAdd}} 
+</script>    
+   
   
 </body>
 </html>
