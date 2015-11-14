@@ -81,7 +81,7 @@ $(document).ready(function(){
 
 
 	 $("#submitBtn").on('click', function(e){
-	 	console.log("test");
+
 	 	e.preventDefault();
 	 	var test= new Meme();
 	 	test.set({
@@ -90,6 +90,11 @@ $(document).ready(function(){
 	 		title: $("#title").val(),
 	 		description: $("#description").val()
 	 	});
+
+	 	$("#url").val("");
+		$("#name").val("");
+	 	$("#title").val("");
+	 	$("#description").val("");
 
 	 	test.save(null, {
 	 		success: function(resp) {
@@ -100,7 +105,7 @@ $(document).ready(function(){
 	 			console.log(err);
 	 		}
 	 	});
-
+	 	location.href="/";
 	 });
 	  
 

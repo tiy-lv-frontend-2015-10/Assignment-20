@@ -47,7 +47,7 @@ a:visited {
 	width:1000px;
 }
 
-#description {
+#descriptionDiv {
 	float: left;
 	width: 400px;
 	display: inline;
@@ -104,4 +104,5 @@ li {
 #submitBtn {
 	height:40px;
 	width:100px;
+	display: block;
 }
