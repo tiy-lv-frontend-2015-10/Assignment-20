@@ -1,129 +1,156 @@
 $(document).ready (function() {
-var Title = Backbone.Model.extend({
+
+  var Title = Backbone.Model.extend({
     initialize: function () {
-  },
+    },
     defaults: {
       URL: null,
       Title: null,
       Detail: null
-  },
-    _parse_class_name: "Title",
-});
-
-var Photos = Backbone.Collection.extend({
-    model: Title,
-    _parse_class_name: "Title"
-})
-
-var PhotoCollection = new Photos();
-
-PhotoCollection.fetch){
-  success: function(resp) {
-    var dataObj = {"data": resp.toJSON()};
-    var 
-  }
-}
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***************************
-
-
-ContactCollection.fetch({
-  success: function(resp) {
-    var dataObj = {"data": resp.toJSON()};
-    var theListTemplate = $("#theListTemplate").text();
-    var listHTML = Mustache.render(theListTemplate, dataObj);
-    $("#listTemplate").html(listHTML);
-    console.log("success: ", resp);
-  }, error: function (err) {
-    console.log("error: ", err);
-  }
-});
-
- var Router = Backbone.Router.extend({
-    initialize: function () {
-      Backbone.history.start({pushState: true});
-  },
-    routes: {
-      "person/:objectId": "person",
-      "contact": "contact",
-      "":":index"
-  }
+    },
+      _parse_class_name: "Title",
   });
 
- var router = new Router();
+  var Photos = Backbone.Collection.extend({
+      model: Title,
+      _parse_class_name: "Title"
+  })
 
-  router.on("route:person", function(objectId) {
-    var person = new Lname({objectId: objectId});
-    person.fetch({
-      success: function(resp) {
+  var PhotoCollection = new Photos();
+
+  var newPhoto = new Title();
+
+  PhotoCollection.fetch({
+    success: function(resp) {
       var dataObj = {"data": resp.toJSON()};
-      var theSingleTemplate = $("#theSingleTemplate").text();
-      var data2HTML = Mustache.render(theSingleTemplate, dataObj);
-        $("#singleTemplate").html(data2HTML);
-        $("#listTemplate").hide();
-        $("#singleTemplate").show(); 
+      console.log(dataObj);
+      var photoTemplate = $("#photoTemplate").text();
+      var photoHTML = Mustache.render(photoTemplate, dataObj);
+      $("#photoInject").html(photoHTML);
+      console.log("success: ", resp);
+    }, error: function (err) {
+      console.log("error: ", err);
+    }
+  });
+
+  $("#submit").on("click", function(e){
+    e.preventDefault();
+    var newDog = new Title();
+    newPhoto.set({
+      URL: $("#URL").val(),
+      Detail: $("#Detail").val(),
+      Title: $("#Title").val()
+    })
+    $("#URL").val(""),
+    $("#Detail").val(""),
+    $("#Title").val("");   
+      newPhoto.save(null,{
+        success: function(resp){
+          PhotoCollection.fetch({
+            success: function(resp){
+            }, error: function(err){
+          }
+        }) 
+        }, error: function (err) {
+          console.log("error: ", err);
+        }
+      })
+      location.href="/"
+  });
+
+
+  /*$("#edit").on("click", function(e){
+    e.preventDefault();
+    var editDog = new Title();
+    editDog.Detail({
+      success:function(Title) {
+        editDog.save(null, {
+          success:function(editDog){
+            editDog.set({
+              Detail:
+            })
+            editDog.save();
+            location.href="/user/"
+          }
+        })
+      }
+    })
+  });*/
+
+ $("#submitEditButton").on("click", function(e){
+    e.preventDefault();
+    var editDog = new Title();
+    editDog.set({
+      Detail: $("#newDetailInput").val()
+    })
+    $("#newDetailInput").val(""),
+      editDog.save(null,{
+        success: function(resp){
+          PhotoCollection.fetch({
+            success: function(resp){
+            }, error: function(err){
+          }
+        }) 
+        }, error: function (err) {
+          console.log("error: ", err);
+        }
+      })
+      location.href="/"
+  });
+
+  var Router = Backbone.Router.extend({
+    initialize: function () {
+      Backbone.history.start({pushState: true});
+    },
+    routes: {
+      "dog/:objectID": "dog",
+      "detail": "detail",
+      "add": "add",
+      "edit": "edit",
+      "":"index"
+    }
+  });
+
+  var router = new Router();
+
+  router.on("route:dog", function(objectId) {
+    var dog = new Title({objectId: objectId});
+    dog.fetch({
+      success: function(resp) {
+        var detailObj = {"detailData": resp.toJSON()};
+        var detailTemplate = $("#detailTemplate").text();
+        var detailHTML = Mustache.render(detailTemplate, detailObj);
+        $("#detailInject").html(detailHTML);
+        $("#photoInject").hide();
+        $("#detailInject").show(); 
       }, error: function(err) {
         console.log("error", err);
       }
-})
+    })
+  });
+
+  router.on("route:index", function () {
+    $("#photoInject").show();
+    $("#addData").removeClass("displayBlock");
+    $("#addData").addClass("displayNone");
+  });
+
+  router.on("route:add", function () {
+    $("#photoInject").hide();
+    $("#addData").removeClass("displayNone");
+    $("#addData").addClass("displayBlock");    
+  });
+
+  router.on("route:edit", function () {
+    $("#editInject").show(); 
+  });
+
+  $("body").on("click", "a", function(e) {
+    e.preventDefault();
+    var href = $(this).attr("href");
+    href = href.substr(1);
+    router.navigate(href, {trigger:true});
+  });
 });
 
-router.on("route:index", function () {
-    $("listTemplate").show();
-    $("singleTemplate").hide(); 
-});
 
-router.on("route:contact", function (){
-    console.log("contact");
-});
-
-router.on("route:index", function (){
-    console.log("home page");
-});
-
-$("body").on("click", "a", function(e) {
-  e.preventDefault();
-  var href = $(this).attr("href");
-  href = href.substr(1);
-  router.navigate(href, {trigger:true});
-});
-});
-
-
-
-
-
-
- 
-
-
-
-/*****
-
-
-
-
-
-
-    /*console.log(resp.toJSON());
-    var listTemplate = $("#listTemplate").text();
-    var theHTML = Mustache.render(listTemplate, resp.toJSON());
-    $("#listView").html(theHTML);
-    var singleTemplate = $("#singleTemplate").text();
-    var theHTML = Mustache.render(singleTemplate, resp.toJSON());
-    $("#singleView").html(theHTML);*/

@@ -1,12 +1,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Assignment 19</title>
+  <title>PuppyGram</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
+  <div id="container">
 
+    <div id="header">
+    <h1>PuppyGram</h1>
+    </div>
+    <div id="headButtons">
+    <ul>
+      <li class="topButtons"><a href="/">Home</a></li>
+      <li class="topButtons"><a href="/add">Add</a></li>
+    </ul>
+    </div>
+    <div id="addData" class="displayNone">
+            <form id="addDataForm">
+            <label class="label">Enter Image Title<input type="text" name="title" id="Title" placeholder="Add title here"/></label>
+            <label class="label">Enter Image Detail<input type="text" name="detail" id="Detail" placeholder="Add details Here"/></label>
+            <label class="label">Enter Image URL<input type="text" name="URL" id="URL" placeholder="Add URL here"/></label>
+            <button id="submitButton" type="submit" name="submit" id="submit">Submit</button>
+            </form> 
+    </div>
+
+    <div id="editDiv">
+      <form id="editData">
+        <label class="editLabel">Enter new description:<input type="text" name="newDetail" id="newDetailInput" placeholder="Edit Detail"></label>
+        <button id="submitEditButton" type="submit" name="EditSubmit" id="EditSubmit">Submit</button>
+    </div>
+<!--DIVS TO INJECT MUSTACHE TEMPLATES-->
+    
+    <div id="photoInject">
+    </div> <!--photoInject-->
+
+    <div id="detailInject">
+    </div> <!--detailInject-->
+
+    <div id="addInject">
+    </div> <!--addInject-->
+
+    <div id="editInject">
+    </div> <!--editInject-->
+
+  </div> <!--container-->
+
+
+<!--MUSTACHE TEMPLATES-->
+
+<!--HOME PAGE MUSTACHE TEMPLATES-->
+
+    <script type="x-tmpl-mustache" id="photoTemplate">
+        {{#data}}
+          <ul id="photos">
+            <li class="photos"><a href="/dog/{{objectId}}"><img src="{{URL}}"></a></li>
+          </ul>
+        {{/data}}
+
+    </script> <!--photoTemplate-->
+
+
+<!--DETAIL PAGE MUSTACHE TEMPLATES-->
+
+    <script type="x-tmpl-mustache" id="detailTemplate">
+
+       {{#detailData}}
+          <div id="photoDetail">
+            <div id="onePhoto">
+              <img src="{{URL}}">
+            </div> <!--onePhoto-->
+            <div id="photoTitle">
+              <h2>{{Title}}</h2>
+              <p>{{Detail}}</p>
+            </div> <!--photoTitle-->
+          </div> <!--photoDetail-->
+           {{/detailData}}
+           <button id="edit">Edit</button>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                */
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//puppygram.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                       
+
+            </script> <!--detailTemplate"-->
+          
+               
+ <!--ADD PAGE MUSTACHE TEMPLATES-->
+
+    <script type="x-tmpl-mustache" id="addTemplate">
+
+
+    </script> <!--addTemplate"-->
+
+<!--EDIT PAGE MUSTACHE TEMPLATES-->
+
+    <script type="x-tmpl-mustache" id="editTemplate">
+
+    </script> <!--editTemplate"-->
+
+
+<!--SCRIPTS-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
