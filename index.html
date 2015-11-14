@@ -10,11 +10,14 @@
 </head>
 
 <body>
+  <div id="container">
   
   <div id="picturePage"></div>
   <p class="clearFloat"></p>
   <div id="detailPage"></div>
   <div id="editPage"></div>
+  
+    </div>
   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
@@ -26,11 +29,19 @@
   
   <script type="x-tmpl-mustache" id="animalPicTemplate">
     {{#mAnimalPics}}
+     <div id="mPicsDiv">
+    <p class="mainPics"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></p>
+     </div>
+    {{/mAnimalPics}}
+  </script>
+    
+    <!-- <script type="x-tmpl-mustache" id="animalPicTemplate">
+    {{#mAnimalPics}}
     <ul id="listedPics">
     <li class="mainPics"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></li>
     </ul>
     {{/mAnimalPics}}
-  </script>
+  </script>-->
     
   <script type="x-tmpl-mustache" id="animalDescriptionTemplate">
     {{#mAnimalDescription}}

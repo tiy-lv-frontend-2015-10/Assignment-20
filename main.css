@@ -1,23 +1,39 @@
 body {
-    background-color: #4e1804;
+    /*background-color: rgb(2, 4, 0);*/
     color: white;
+    background: -webkit-radial-gradient(circle, black, lightblue); /* Safari */
+    background: -o-radial-gradient(circle, black, lightblue); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, black, lightblue); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, black, lightblue); /* Standard syntax */    
 }
 
-li.mainPics {
-    list-style: none;
+
+#container {
+    min-width: 1275px;
+    max-width: 1300px;
 }
 
-#listedPics {}
 
-#listedPics li img {
+#picturePage {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+
+.mainpics {
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.mainPics img {
+    width: 275px;
+    height: 200px;
     display: inline;
     float: left;
-    width: 300px;
-    height: 250px;
+    margin: .5em 0 0 .5em;
+    border-radius: 2px;
 }
-
-
-.mainPics {}
 
 .clearFloat {
     clear: both;
