@@ -38,15 +38,17 @@ $(document).ready(function(){
 		}
 	});
 
-	$("saveBtn").on('click',function(){
+	$("#saveBtn").on('click',function(e){
+	e.preventDefault();
 	var animal = new Pet();
 	animal.set({
-		url: null,
-		description: null
+		url: $("#url").val(),
+		description: $("#d_page").val()
 	})
+	$("#url").val(""),
+	$("#d_page").val("");
 		animal.save(null,{
 			success:function(resp){
-				console.log("success ", resp);
 				PetsCollection.fetch({
 					success: function(resp){
 					}, error: function(err){	
@@ -56,7 +58,46 @@ $(document).ready(function(){
 				console.log("error ", err);
 		}
 	})
+		location.href="/"
 	});
+	$("#editSubmit").on('click',function(e){
+	e.preventDefault();
+	var animal = new Pet();
+	animal.set({
+		description: $("#editData").val()
+	})
+	$("#editData").val("");
+		animal.save(null,{
+			success:function(resp){
+				PetsCollection.fetch({
+					success: function(resp){
+					}, error: function(err){	
+					}
+				})
+			}, error: function(err){
+				console.log("error ", err);
+		}
+	})
+		location.href="/user/:objectId"
+	});
+
+	// $("#edit").on('click',function(e){
+	// 	e.preventDefault();
+	// 	var animal = new Pet({objectId:objectId});
+	// 	animal.description({
+	// 		success:function(Pet){
+	// 			Pet.save(null,{
+	// 				success: function(animal){
+	// 					animal.set({
+	// 						description: 
+	// 					})
+	// 					animal.save();
+	// 					location.href="/user/"
+	// 				}
+	// 			})
+	// 		}
+	// 	})
+	// });
 
 	var Router = Backbone.Router.extend({
 		initialize:function(){
@@ -65,7 +106,7 @@ $(document).ready(function(){
 		routes:{
 			"user/:objectId": "user",
 			"add": "add",
-			"edit": "edit",
+			"edit/:objectId": "edit",
 			"": "index"
 		}
 	});
@@ -94,7 +135,9 @@ $(document).ready(function(){
 		$("#descripDiv").hide();
 		console.log('add page');
 	});
-	router.on('route:edit', function(){
+	router.on('route:edit', function(objectId){
+		$("#editDiv").show();
+		$("#descripDiv").hide();
 		console.log('edit page');
 	});
 	router.on('route:index', function(){

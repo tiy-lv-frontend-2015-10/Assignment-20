@@ -17,16 +17,21 @@
 			<ul>
 				<li><a href="/">HOME</a></li>
 				<li><a href="/add">ADD</a></li>
-				<li><a href="/edit">EDIT</a></li>
 			</ul>
 		</div>
 		<div id="imageDiv"></div>
 		<div id="descripDiv"></div>
 		<div id="addDiv">
 			<form>
-				<input name="URL" placeholder="URL"/>
-				<input placeholder="Description"/>
+				<label>Image URL<input id="url" placeholder="URL"/></label>
+				<label>Description<input id="d_page" placeholder="Description"/></label>
 				<button type="submit" id="saveBtn">Submit</button>
+			</form>
+		</div>
+		<div id="editDiv">
+			<form>
+				<label>New Description<input id="editData" placeholder="New Description"/></label>
+				<button type="submit" id="editSubmit">Submit</button>
 			</form>
 		</div>
 		<div id="footer">
@@ -53,6 +58,8 @@
 	{{#pet}}
 		<img src="{{url}}"/>
 		<p class="descrip"><strong>{{description}}</strong><br/><br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, dolores, ut. Officiis modi, laboriosam natus quo quos ea sunt molestias reprehenderit explicabo voluptatum minima fuga ullam autem alias numquam, culpa? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati libero qui a porro dolores expedita quo magnam cum quos officiis tempore, aspernatur iure minus error nesciunt animi aliquam ipsa sed.</p>
+		<br/>
+		<button id="edit"><a href="/edit/{{objectId}}">EDIT</a></button>
 	{{/pet}}
 	</div>
 	<div id="disqus_thread"></div>

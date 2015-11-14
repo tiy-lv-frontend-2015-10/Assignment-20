@@ -100,6 +100,28 @@ h1 {
 
 #addDiv{
 	display: none;
+	position: relative;
+	width: 80%;
+	margin: auto;
+}
+
+#edit{
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	margin: auto;
+	left: 650px;
+	bottom: 200px;
+}
+
+#url {
+	width: 600px;
+	height: 30px;
+}
+
+#editDiv{
+	display: none;
 }
 
 #footer {
