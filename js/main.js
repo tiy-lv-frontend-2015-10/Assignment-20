@@ -81,7 +81,8 @@ $(document).ready (function() {
     e.preventDefault();
     var editDog = new Title();
     editDog.set({
-      Detail: $("#newDetailInput").val()
+      Detail: $("#newDetailInput").val(),
+      URL: 
     })
     $("#newDetailInput").val(""),
       editDog.save(null,{
@@ -95,7 +96,6 @@ $(document).ready (function() {
           console.log("error: ", err);
         }
       })
-      location.href="/"
   });
 
   var Router = Backbone.Router.extend({
@@ -103,10 +103,10 @@ $(document).ready (function() {
       Backbone.history.start({pushState: true});
     },
     routes: {
-      "dog/:objectID": "dog",
+      "dog/:objectId": "dog",
       "detail": "detail",
       "add": "add",
-      "edit": "edit",
+      "edit/:objectId": "edit",
       "":"index"
     }
   });
@@ -141,8 +141,10 @@ $(document).ready (function() {
     $("#addData").addClass("displayBlock");    
   });
 
-  router.on("route:edit", function () {
-    $("#editInject").show(); 
+  router.on("route:edit", function (objectId) {
+    $("#editDiv").removeClass("displayNoneEdit");
+    $("#editDiv").addClass("editDivBlock"); 
+    $("#photoDetail").hide();
   });
 
   $("body").on("click", "a", function(e) {

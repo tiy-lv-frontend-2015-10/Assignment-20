@@ -26,7 +26,7 @@
             </form> 
     </div>
 
-    <div id="editDiv">
+    <div id="editDiv" class="displayNoneEdit">
       <form id="editData">
         <label class="editLabel">Enter new description:<input type="text" name="newDetail" id="newDetailInput" placeholder="Edit Detail"></label>
         <button id="submitEditButton" type="submit" name="EditSubmit" id="EditSubmit">Submit</button>
@@ -76,8 +76,9 @@
               <p>{{Detail}}</p>
             </div> <!--photoTitle-->
           </div> <!--photoDetail-->
-           {{/detailData}}
-           <button id="edit">Edit</button>
+          <button id="edit"><a href="/edit/{{objectId}}">Edit</a></button>
+        {{/detailData}}
+
             <div id="disqus_thread"></div>
             <script>
                 /**
@@ -115,6 +116,7 @@
 <!--EDIT PAGE MUSTACHE TEMPLATES-->
 
     <script type="x-tmpl-mustache" id="editTemplate">
+
 
     </script> <!--editTemplate"-->
 
