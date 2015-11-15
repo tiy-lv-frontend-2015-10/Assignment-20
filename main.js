@@ -105,9 +105,10 @@ $(document).ready(function(){
 			}
 		});
 
-		$("#memesDiv").hide();
-		$("#oneMemeDiv").hide();
-		$("#editDiv").show();
+			$("#memesDiv").hide();
+			$("#oneMemeDiv").hide();
+			$("#editDiv").show();
+			$("#nav").css("width","1000px");
 	});
 
 

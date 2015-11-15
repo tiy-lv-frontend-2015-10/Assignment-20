@@ -62,13 +62,14 @@
 	<div id="formEdit">
 	<form id="editForm">
 	{{#data}}
+		<img class="imagesLarge" src="{{url}}"/>
+		<div id="changeData">
 		<p>{{user}}</p>
 		<span>Title: </span><input id="editTitle" value="{{title}}"/>
-		
-		<span>Url: </span><input id="editUrl" value="{{url}}"/>
 		<span>Description: </span><input id="editDescription" value="{{description}}"/>
 
 		<button id="editSubmitBtn">Submit</button>
+		</div>
 	{{/data}}
 	</form>
 </div>

@@ -128,7 +128,7 @@ li {
 }
 #editDiv {
 	display: none;
-	width:730px;
+	width:1000px;
 	margin:auto;
 }
 
@@ -137,6 +137,10 @@ li {
 	width:300px;
 	padding-top: 20px;
 	font-size: 14px;
+}
+
+#changeData {
+	float: right;
 }
 
 #submitBtn {
