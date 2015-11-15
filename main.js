@@ -94,12 +94,16 @@ $(document).ready(function(){
 	});
 
 	router.on('route:edit', function(objectId) {
-		var meme = new Meme({objectId:objectId});
-		meme.fetch({
+		var memeEdit = new Meme({objectId:objectId});
+		memeEdit.fetch({
 			success: function(resp) {
 				console.log(resp);
+				var editObj = {'data':resp.toJSON()};
+				var template3=$('#formEdit').text();
+				var editHTML = Mustache.render(template3,editObj);
+				$("#editDiv").html(editHTML);
 			}
-		})
+		});
 	});
 
 
@@ -114,10 +118,7 @@ $(document).ready(function(){
 	 		description: $("#description").val()
 	 	});
 
-	 	$("#url").val("");
-		$("#name").val("");
-	 	$("#title").val("");
-	 	$("#description").val("");
+	 	
 
 	 	test.save(null, {
 	 		success: function(resp) {

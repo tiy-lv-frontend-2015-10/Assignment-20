@@ -16,6 +16,7 @@
 </div>
 <div id="memesDiv"></div>
 <div id="oneMemeDiv"></div>
+<div id="editDiv"></div>
 
 <div id="formDiv">
 	<form id="addForm">
@@ -60,11 +61,12 @@
 <script id="formEdit" type="x-tmpl-mustache">
 	<div id="formEdit">
 	<form id="editForm">
-		<span>Your Name: </span><input id="editName"/>
-		<span>Title: </span><input id="editTitle"/>
+	{{#data}}
+		<span>{{user}}</span>
+		<span>Title: </span><input id="editTitle" value="{{title}}"/>
 		
-		<span>Url: </span><input id="editUrl"/>
-		<span>Description: </span><input id="editDescription"/>
+		<span>Url: </span><input id="editUrl" value="{{url}}"/>
+		<span>Description: </span><input id="editDescription" value="{{description}}"/>
 
 		<button id="editSubmitBtn">Submit</button>
 
