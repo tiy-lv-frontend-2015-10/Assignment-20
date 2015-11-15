@@ -1,3 +1,11 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
 #memesDiv {
 	width:750px;
 	margin:auto;
@@ -10,6 +18,23 @@
 	border-radius:10px;
 
 }
+
+.fontawesome-edit {
+	position: absolute;
+	bottom:190px;
+	left:15px;
+	background-color: #fff;
+	padding:5px;
+	display: block;
+	border-radius:3px;
+	z-index: 2;
+}
+
+.hidden {
+	display: none;
+}
+
+
 
 #nav {
 	width:730px;
@@ -24,7 +49,7 @@
 	top:10px;
 }
 a {
-	/*text-decoration: none;*/
+	color:black;
 }
 a:visited {
 	color:black;
@@ -33,6 +58,7 @@ a:visited {
 	display: inline;
 	margin:10px;
 	width:225px;
+	position: relative;
 }
 
 .imagesLarge {

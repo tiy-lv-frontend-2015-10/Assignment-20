@@ -5,7 +5,17 @@ $(document).ready(function(){
 	    console.log("A new meme has been created");
 	  },
 	  _parse_class_name: "Meme",
-
+	  defaults: {
+	  	url: null,
+	  	user: null,
+	  	title: null,
+	  	description: null
+	  },
+	 validate: function(attrs) {
+	 	if(!attrs.url) {
+	 		$()
+	 	}
+	 }
 	});
 
 	var Memes = Backbone.Collection.extend({
@@ -28,7 +38,9 @@ $(document).ready(function(){
 	});
 
 
-
+	$("#edit").on('click', function(){
+		$(".fontawesome-edit").toggleClass("hidden");
+	})
 
 
 
@@ -41,7 +53,9 @@ $(document).ready(function(){
 	  routes: {
 	    "meme/:objectId":"meme",
 	    "add":"add",
+	    "edit/:objectId":"edit",
 	    "":"index"
+	    
 	    
 	  }
 	});
@@ -77,6 +91,15 @@ $(document).ready(function(){
 		$("#nav").css("width","730px");
 		$("#addForm").hide();
 
+	});
+
+	router.on('route:edit', function(objectId) {
+		var meme = new Meme({objectId:objectId});
+		meme.fetch({
+			success: function(resp) {
+				console.log(resp);
+			}
+		})
 	});
 
 

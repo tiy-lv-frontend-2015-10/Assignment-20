@@ -9,8 +9,9 @@
 <div id="nav">
 	<ul>
 		<li><a href="/">Home</a></li>
-		<li>Detail</li>
 		<li><a href="/add">Add</a></li>
+		<li id="edit">Edit</li>
+
 	</ul>
 </div>
 <div id="memesDiv"></div>
@@ -34,7 +35,7 @@
 		
 	
 		<div class="images">
-			<a href="/meme/{{objectId}}"><img class="imgMeme" src="{{url}}"/></div></a>
+			<a href="/edit/{{objectId}}"><span class="fontawesome-edit hidden"></span></a><a href="/meme/{{objectId}}"><img class="imgMeme" src="{{url}}"/></div></a>
 		
 		
 	{{/data}}
@@ -54,6 +55,21 @@
 		</div>
 	{{/data}}
 	
+</script>
+
+<script id="formEdit" type="x-tmpl-mustache">
+	<div id="formEdit">
+	<form id="editForm">
+		<span>Your Name: </span><input id="editName"/>
+		<span>Title: </span><input id="editTitle"/>
+		
+		<span>Url: </span><input id="editUrl"/>
+		<span>Description: </span><input id="editDescription"/>
+
+		<button id="editSubmitBtn">Submit</button>
+
+	</form>
+</div>
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
