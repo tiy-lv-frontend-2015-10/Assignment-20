@@ -5,7 +5,7 @@ var Gif = Backbone.Model.extend({
   defaults: {
     url: null,
     Description: null
-  },
+    },
   _parse_class_name: "Gifs",
 });
 
@@ -27,18 +27,23 @@ var Gif = Backbone.Model.extend({
           console.log("error: ", err);
         }
   });
-      $("#submit").on("click", function(){
+
+
+  $("#submit").on("click", function(){
       var gif = new Gif();
       gif.set({
         url: $("#url").val(),
         Description: $("#decription").val()
       })
- 	    gif.save(null, {
+      $("#url").val("");
+      $("#decription").val("");
+      gif.save(null, {
       success: function(resp){
       },error: function(err){
         console.log("error ", err);
       }
-       })
+       });
+       location.href="/";
       });
 
   var Router = Backbone.Router.extend({
@@ -63,29 +68,55 @@ router.on('route:details', function(objectId){
       var detailsHTML = Mustache.render(detailsTemplate, gifsObj);
         $("#details").html(detailsHTML);
         $("#home").hide();
+        $("#add").hide();
+        $("#edit").hide();
         $("#details").show();
+        $("#submit").on("click", function(){
+      var gif = new Gif();
+      gif.set({
+        url: $("#url").val(),
+        Description: $("#decription").val(),
+        objectId: $("#objectId").val()
+      })
+      $("#url").val("");
+      $("#decription").val("");
+      $("#objectId").val("");
+      gif.save(null, {
+      success: function(resp){
+      },error: function(err){
+        console.log("error ", err);
+      }
+       });
+       location.href="/";
+      });
       },error: function(err){
         console.log("error ", err);
       }
   })
   });
-  
-  router.on('route:index', function(){
-    $("#home").show();
-    $("#details").hide();
-    $("#add").hide();
-  });
+    router.on('route:add', function(){
+      $("#add").toggleClass();
+      $("#home").hide();
+      $("#edit").hide();
+      $("#details").hide();
+      $("#add").show();
+      
+    });
 
-  router.on("route:edit", function () {
-    console.log("edit");
-  });
+    router.on('route:edit', function(){
+      $("#home").hide();
+      $("#details").hide();
+      $("#add").hide();
+      $("#edit").show();
 
-  router.on('route:add', function(){
-    $("#add").show();
-    $("#home").hide();
-
-  });
-
+    });
+    
+    router.on('route:index', function(){
+      $("#details").hide();
+      $("#add").hide();
+      $("#edit").hide();
+      $("#home").show();
+    });
 
 
   $("body").on('click', 'a', function(e){
