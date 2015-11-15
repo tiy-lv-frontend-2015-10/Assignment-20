@@ -11,14 +11,14 @@ $(document).ready (function() {
       _parse_class_name: "Title",
   });
 
+  var newPhoto = new Title();
+
   var Photos = Backbone.Collection.extend({
       model: Title,
       _parse_class_name: "Title"
   })
 
   var PhotoCollection = new Photos();
-
-  var newPhoto = new Title();
 
   PhotoCollection.fetch({
     success: function(resp) {
@@ -59,52 +59,12 @@ $(document).ready (function() {
   });
 
 
-  /*$("#edit").on("click", function(e){
-    e.preventDefault();
-    var editDog = new Title();
-    editDog.Detail({
-      success:function(Title) {
-        editDog.save(null, {
-          success:function(editDog){
-            editDog.set({
-              Detail:
-            })
-            editDog.save();
-            location.href="/user/"
-          }
-        })
-      }
-    })
-  });*/
-
- $("#submitEditButton").on("click", function(e){
-    e.preventDefault();
-    var editDog = new Title();
-    editDog.set({
-      Detail: $("#newDetailInput").val(),
-      URL: 
-    })
-    $("#newDetailInput").val(""),
-      editDog.save(null,{
-        success: function(resp){
-          PhotoCollection.fetch({
-            success: function(resp){
-            }, error: function(err){
-          }
-        }) 
-        }, error: function (err) {
-          console.log("error: ", err);
-        }
-      })
-  });
-
   var Router = Backbone.Router.extend({
     initialize: function () {
       Backbone.history.start({pushState: true});
     },
     routes: {
       "dog/:objectId": "dog",
-      "detail": "detail",
       "add": "add",
       "edit/:objectId": "edit",
       "":"index"
@@ -122,30 +82,45 @@ $(document).ready (function() {
         var detailHTML = Mustache.render(detailTemplate, detailObj);
         $("#detailInject").html(detailHTML);
         $("#photoInject").hide();
-        $("#detailInject").show(); 
+        $("#detailInject").show();
+
+        $("#submitEditButton").on("click", function(){
+        var dog = new Title();
+        dog.set({
+          objectId: $("#objectId").val(),
+          Detail: $("#Detail").val(),
+          URL: $("#URL").val()
+        })
+          $("#objectId").val("");
+          $("#Detail").val("");
+          $("#URL").val("");
+        dog.save(null, {
+        success: function(resp){
+        }, error: function(err){
+          console.log("error: ", err);
+        }
+      });
+      location.href="/";
+    });
       }, error: function(err) {
-        console.log("error", err);
+        console.log("error ", err);
       }
     })
   });
 
-  router.on("route:index", function () {
-    $("#photoInject").show();
-    $("#addData").removeClass("displayBlock");
-    $("#addData").addClass("displayNone");
+  router.on("route:index", function () {    
+    $("#detailInject").hide();
+    $("#addData").hide(); 
+    $("#photoInject").show();     
   });
 
-  router.on("route:add", function () {
+  router.on("route:add", function () { 
+    $("#addData").toggleClass();
     $("#photoInject").hide();
-    $("#addData").removeClass("displayNone");
-    $("#addData").addClass("displayBlock");    
+    $("#detailInject").hide();
+    $("#addData").show();
   });
 
-  router.on("route:edit", function (objectId) {
-    $("#editDiv").removeClass("displayNoneEdit");
-    $("#editDiv").addClass("editDivBlock"); 
-    $("#photoDetail").hide();
-  });
 
   $("body").on("click", "a", function(e) {
     e.preventDefault();

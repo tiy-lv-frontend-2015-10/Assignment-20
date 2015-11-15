@@ -51,6 +51,7 @@ body {
 	float: left;
 }
 
+
 .photos img {
 	width: 200px;
 	height: 200px;
@@ -112,13 +113,6 @@ body {
 	margin-top: 10px;
 }
 
-.displayNone {
-	display: none;
-}
-
-.displayBlock {
-	display: block;
-}
 
 .label {
 	font-family: "Arial", "sans-serif";
@@ -174,13 +168,8 @@ body {
 	background-color: #9900cc;
 }
 
-.displayNoneEdit {
-	display:none;
+.hidden {
+	display: none;
 }
-
-.editDivBlock {
-	display:block;
-}
-
 
             

@@ -9,28 +9,25 @@
   <div id="container">
 
     <div id="header">
-    <h1>PuppyGram</h1>
+      <h1>PuppyGram</h1>
     </div>
     <div id="headButtons">
-    <ul>
-      <li class="topButtons"><a href="/">Home</a></li>
-      <li class="topButtons"><a href="/add">Add</a></li>
-    </ul>
-    </div>
-    <div id="addData" class="displayNone">
-            <form id="addDataForm">
-            <label class="label">Enter Image Title<input type="text" name="title" id="Title" placeholder="Add title here"/></label>
-            <label class="label">Enter Image Detail<input type="text" name="detail" id="Detail" placeholder="Add details Here"/></label>
-            <label class="label">Enter Image URL<input type="text" name="URL" id="URL" placeholder="Add URL here"/></label>
-            <button id="submitButton" type="submit" name="submit" id="submit">Submit</button>
-            </form> 
+      <ul>
+        <li class="topButtons"><a href="/">Home</a></li>
+        <li class="topButtons"><a href="/add">Add</a></li>
+      </ul>
     </div>
 
-    <div id="editDiv" class="displayNoneEdit">
-      <form id="editData">
-        <label class="editLabel">Enter new description:<input type="text" name="newDetail" id="newDetailInput" placeholder="Edit Detail"></label>
-        <button id="submitEditButton" type="submit" name="EditSubmit" id="EditSubmit">Submit</button>
+
+    <div id="addData" class="hidden">
+        <form id="addDataForm">
+          <label class="label">Enter Image Title<input type="text" name="title" id="Title" placeholder="Add title here"/></label>
+          <label class="label">Enter Image Detail<input type="textarea" name="detail" id="Detail" placeholder="Add details here"/></label>
+          <label class="label">Enter Image URL<input type="text" name="URL" id="URL" placeholder="Add URL here"/></label>
+          <button type="submit" name="submit" id="submit">Submit</button>
+        </form> 
     </div>
+
 <!--DIVS TO INJECT MUSTACHE TEMPLATES-->
     
     <div id="photoInject">
@@ -39,10 +36,7 @@
     <div id="detailInject">
     </div> <!--detailInject-->
 
-    <div id="addInject">
-    </div> <!--addInject-->
-
-    <div id="editInject">
+    <div id="editInject" class="hidden">
     </div> <!--editInject-->
 
   </div> <!--container-->
@@ -76,8 +70,18 @@
               <p>{{Detail}}</p>
             </div> <!--photoTitle-->
           </div> <!--photoDetail-->
-          <button id="edit"><a href="/edit/{{objectId}}">Edit</a></button>
-        {{/detailData}}
+
+           <form id="editData">
+            <input type="text" id="objectId" value="{{objectId}}">
+            <input type="text" id="Title" value="">
+            <input type="text" id="URL" value="">
+            <input type="text" name="editDescription" id="Detail" placeholder="Edit Detail" value="">
+            <input type="button" id="submitEditButton">
+            </form>
+       {{/detailData}}
+       
+
+       
 
             <div id="disqus_thread"></div>
             <script>
@@ -108,15 +112,10 @@
                
  <!--ADD PAGE MUSTACHE TEMPLATES-->
 
-    <script type="x-tmpl-mustache" id="addTemplate">
-
-
-    </script> <!--addTemplate"-->
-
 <!--EDIT PAGE MUSTACHE TEMPLATES-->
 
     <script type="x-tmpl-mustache" id="editTemplate">
-
+   
 
     </script> <!--editTemplate"-->
 
@@ -127,8 +126,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
-  <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-latest.js"></script> 
   <script src="js/backbone-parse.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js"></script>  
 </body>
 </html>
