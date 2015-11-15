@@ -30,6 +30,28 @@ ContainersCollection.fetch({
   }
 });
 
+$("#addButton").on('click', function() {
+  var container = new Container();
+  container.set({
+    user: $("#addUser").val(),
+    url: $("#addImage").val(),
+    title: $("#addTitle").val(),
+    detail: $("#addDetail").val()
+  })
+  $("#addImage").val("");
+  $("#addTitle").val("");
+  $("#addDetail").val("");
+  container.save(null, {
+    success: function(resp){
+      console.log("success", resp);
+    },
+    error: function(err) {
+      console.log("error", err);
+    }
+  });
+  router.navigate("/");
+});
+
 var Router = Backbone.Router.extend({
   initialize: function(){
     Backbone.history.start({pushState: true});
@@ -63,6 +85,7 @@ router.on("route:image", function(objectId) {
 
 router.on('route:index', function(){
   $("#detailContainer").hide();
+  $(".addPage").hide();
   $("#pictureContainer").show();
 });
 
@@ -71,8 +94,13 @@ router.on("route:add", function() {
   $(".addPage").show();
 });
 
+router.on("route:edit", function() {
+  $("#detailContainer").hide();
+  $(".editPage").show();
+});
 
-
+$(".addPage").hide();
+$(".editPage").hide();
 
 $('body').on('click','a', function(e){
   e.preventDefault();

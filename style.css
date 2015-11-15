@@ -21,6 +21,8 @@ a {
 }
 
 #home {
+  font-family:"Courier New", Courier, monospace;
+  font-size: 20px;
   position: relative;
   bottom: 1em;
   left: 10em;
@@ -31,15 +33,22 @@ a {
 }
 
 #add {
+  font-family:"Courier New", Courier, monospace;
+  font-size: 20px;
   position: relative;
   bottom: 2em;
-  left: 67em;
+  left: 50em;
 }
 
 #edit {
+  font-family:"Courier New", Courier, monospace;
+  font-size: 20px;
   position: relative;
-  bottom: 3.1em;
-  left: 70em;
+  top: 12em;
+  right: 6em;
+  background-color: white;
+  width: 50px;
+
 }
 
 #add a {
@@ -79,4 +88,54 @@ img {
 #user {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 5px;
+}
+
+.addPage {
+  margin: auto;
+  width: 400px;
+  height: 500px;
+}
+
+#addForm {
+  margin-top: 50px;
+}
+
+#addImage {
+  font-family:"Courier New", Courier, monospace;
+  width: 350px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+#addTitle {
+  font-family:"Courier New", Courier, monospace;
+  width: 350px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+#addDetail {
+  font-family:"Courier New", Courier, monospace;
+  width: 400px;
+  height: 200px;
+  border-color: #e3e3e3;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#addButton {
+  width: 175px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Dancing Script', cursive;
+  background-color: #004879;
+  outline: none;
+}
+
+#addButton:hover {
+  background-color: #004895;
+}
+
+#addButton:active {
+  background-color: #004890;
 }
