@@ -12,6 +12,7 @@ $(document).ready(function(){
     },
     defaults: {
       URL: null,
+      Title: null,
       Description: null
     },
     _parse_class_name: "Images"
@@ -39,13 +40,15 @@ $(document).ready(function(){
 	});
 
 	$("#saveBtn").on('click',function(e){
-	e.preventDefault();
+		e.preventDefault();
 	var animal = new Pet();
 	animal.set({
 		url: $("#url").val(),
+		title: $("#title").val(),
 		description: $("#d_page").val()
 	})
 	$("#url").val(""),
+	$("#title").val(""),
 	$("#d_page").val("");
 		animal.save(null,{
 			success:function(resp){
@@ -58,15 +61,18 @@ $(document).ready(function(){
 				console.log("error ", err);
 		}
 	})
-		location.href="/"
+		router.navigate("/");
 	});
+
 	$("#editSubmit").on('click',function(e){
 	e.preventDefault();
 	var animal = new Pet();
 	animal.set({
+		objectId: $("#objectId").val(),
 		description: $("#editData").val()
 	})
-	$("#editData").val("");
+	$("#objectId").val(""),
+	$("#editData").val("")
 		animal.save(null,{
 			success:function(resp){
 				PetsCollection.fetch({
@@ -78,26 +84,8 @@ $(document).ready(function(){
 				console.log("error ", err);
 		}
 	})
-		location.href="/user/:objectId"
+		router.navigate("/");
 	});
-
-	// $("#edit").on('click',function(e){
-	// 	e.preventDefault();
-	// 	var animal = new Pet({objectId:objectId});
-	// 	animal.description({
-	// 		success:function(Pet){
-	// 			Pet.save(null,{
-	// 				success: function(animal){
-	// 					animal.set({
-	// 						description: 
-	// 					})
-	// 					animal.save();
-	// 					location.href="/user/"
-	// 				}
-	// 			})
-	// 		}
-	// 	})
-	// });
 
 	var Router = Backbone.Router.extend({
 		initialize:function(){
@@ -106,7 +94,7 @@ $(document).ready(function(){
 		routes:{
 			"user/:objectId": "user",
 			"add": "add",
-			"edit/:objectId": "edit",
+			"user/:objectId/edit": "edit",
 			"": "index"
 		}
 	});
@@ -123,27 +111,40 @@ $(document).ready(function(){
 				$("#descripDiv").html(petHTML);
 				$("#imageDiv").hide();
 				$("#descripDiv").show();
-				console.log("success ", resp);
-		}, error: function(err){
-			console.log("error ", err);
-			}
-		})
+					console.log("success ", resp);
+				}, error: function(err){
+					console.log("error ", err);
+					}
+				})
 	});
 	router.on('route:add', function(){
 		$("#addDiv").show();
 		$("#imageDiv").hide();
 		$("#descripDiv").hide();
+		$("#editDiv").hide();
 		console.log('add page');
 	});
 	router.on('route:edit', function(objectId){
-		$("#editDiv").show();
-		$("#descripDiv").hide();
-		console.log('edit page');
+		var animal = new Pet({objectId: objectId});
+		animal.fetch({
+			success:function(resp){
+				var editObj = {'edit':resp.toJSON()};
+				var editTemplate = $("#editTemplate").text();
+				var editHTML = Mustache.render(editTemplate, editObj);
+				$("#editDiv").html(editHTML);
+				$("#descripDiv").hide();
+				$("#editDiv").show();
+				console.log('edit page');
+			}, error: function(err){
+				console.log("error ", err);
+			}
+		})
 	});
 	router.on('route:index', function(){
 		$("#imageDiv").show();
 		$("#descripDiv").hide();
 		$("#addDiv").hide();
+		$("#editDiv").hide();
 		console.log('home page');
 	});
 

@@ -23,17 +23,13 @@
 		<div id="descripDiv"></div>
 		<div id="addDiv">
 			<form>
-				<label>Image URL<input id="url" placeholder="URL"/></label>
-				<label>Description<input id="d_page" placeholder="Description"/></label>
-				<button type="submit" id="saveBtn">Submit</button>
+				<label>Image URL <br/><input id="url" type="text"placeholder="URL"/></label><br/>
+				<label>Title <br/><input id="title" type="text"placeholder="Title"/></label><br/>
+				<label>Description <br/><input id="d_page" placeholder="Description"/></label><br/>
+				<button type="submit" id="saveBtn">Submit</button><br/>
 			</form>
 		</div>
-		<div id="editDiv">
-			<form>
-				<label>New Description<input id="editData" placeholder="New Description"/></label>
-				<button type="submit" id="editSubmit">Submit</button>
-			</form>
-		</div>
+		<div id="editDiv"></div>
 		<div id="footer">
 			<p>&copy; 2015 PETStagram, INC</p>
 		</div>
@@ -54,12 +50,13 @@
 	</ul>
 	</script>
 	<script type="x-tmpl-mustache" id="descripTemplate">
-	<div>
+	<div id="descripData">
 	{{#pet}}
 		<img src="{{url}}"/>
-		<p class="descrip"><strong>{{description}}</strong><br/><br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, dolores, ut. Officiis modi, laboriosam natus quo quos ea sunt molestias reprehenderit explicabo voluptatum minima fuga ullam autem alias numquam, culpa? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati libero qui a porro dolores expedita quo magnam cum quos officiis tempore, aspernatur iure minus error nesciunt animi aliquam ipsa sed.</p>
-		<br/>
-		<button id="edit"><a href="/edit/{{objectId}}">EDIT</a></button>
+		<p class="titleDescrip">{{title}}</p><br/>
+		<p class="descrip">{{description}}</p>
+		<br/>	
+		<button id="edit"><a href="/user/{{objectId}}/edit">EDIT</a></button>
 	{{/pet}}
 	</div>
 	<div id="disqus_thread"></div>
@@ -86,7 +83,14 @@
 	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
 	</noscript>
 	</script>
-	<script type="x-tmpl-mustache" id="addTemplate">
+	<script type="x-tmpl-mustache" id="editTemplate">
+		{{#edit}}
+		<form>
+			<input type="hidden" name="objectId" value="{{objectId}}" id="objectId"/>
+			<label>New Description<br/><input type="text" id="editData" placeholder="New Description"/></label>
+			<button type="submit" id="editSubmit">Submit</button>
+		</form>
+		{{/edit}}
 	</script>
 </body>
 </html>
