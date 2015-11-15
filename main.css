@@ -56,6 +56,10 @@ h1 {
 }
 
 /*2nd Page --- Detail View*/
+.hidden {
+    display: none;
+}
+
 #detailPageDiv {
     margin: auto;
     width: 70%;
