@@ -50,6 +50,7 @@ $(document).ready(function (){
 			});
 		
 			router.navigate("/");
+			$("#suma").hide();
 		});
 //collection
 	var Router = Backbone.Router.extend ({
@@ -58,9 +59,10 @@ $(document).ready(function (){
 		Backbone.history.start({pushState:true});
 			},
 			routes: {
+				"":"index",
 				"url/:objectId": "url",
 				"add":"add",
-				"":"index",
+				
 				/*"add":"add",*/
 			}	 
 	});
@@ -78,12 +80,10 @@ $(document).ready(function (){
 				$("#gallery").hide();
 				$("#suma").hide();
 				$("#desc").show();
-				$("#submit").toggle();
 		}
 
 		})	
 	});
-
 
 		router.on('route:index', function(){
 			$("#desc").hide();
