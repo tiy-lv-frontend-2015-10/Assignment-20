@@ -37,7 +37,7 @@ var ImageCollection = new Images();
       }
     });
 
-//Descriptions
+//Descriptions and user
 var router = new Router();
 router.on('route:URL', function(objectId){
 var info = {'deathstar': ImageCollection.get(objectId).toJSON()};
@@ -47,7 +47,8 @@ $("#jedi").html(userHTML);
 	$("#sith").hide();
 	$("#jedi").show();
 	});
-	
+
+	//the clicky thingy
 		router.on('route:index' , function(){
 		$("#sith").show();
 		$("#jedi").hide();

@@ -1,6 +1,41 @@
-body{background-color: aqua}
+body{background-color: beige}
+
+
 ul{list-style: none;
 display: inline-block;}
-img{border-radius: 5px;
-width:400px;
-height: 300px;}
+
+
+#sith img{border-radius: 5px;
+width:250px;
+height: 250px;}
+
+#jedi img {border-radius: 10px;
+	width: 600px;
+height: 500px;}
+
+#header {font-size: 40px;
+position: relative;
+left: 540px;
+font-family: 'Lobster', cursive;
+color: brown}
+
+#nav {position: relative;
+    background-color: rgba(28, 27, 27, 0.63);
+    color: #F9F1D0;
+    height: 60px;
+}
+
+#nav li {list-style: none;
+  font-size: 30px;
+  margin-left: 350px;
+  float: left;
+}
+#nav a {
+  text-decoration: none;
+  color: #F9F1D0;
+}
+
+#userinfoTemplate {
+	
+}
+
