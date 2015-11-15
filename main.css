@@ -126,6 +126,18 @@ li {
 	padding-top: 20px;
 	font-size: 14px;
 }
+#editDiv {
+	display: none;
+	width:730px;
+	margin:auto;
+}
+
+#editForm input {
+	display: block;
+	width:300px;
+	padding-top: 20px;
+	font-size: 14px;
+}
 
 #submitBtn {
 	height:40px;
