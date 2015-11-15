@@ -11,8 +11,6 @@ $(document).ready(function (){
 		_parse_class_name: "Image"
 	}); 
 
-	var picture = new Picture();	
-
 
 	var Pictures = Backbone.Collection.extend({
 		model: Picture,
@@ -20,6 +18,7 @@ $(document).ready(function (){
 	});
 
 	var ImagesCollection = new Pictures();
+
 	ImagesCollection.fetch({
 		success: function(resp){
 		var imgObj = {"pics": resp.toJSON()};
@@ -32,7 +31,21 @@ $(document).ready(function (){
 			console.log(err);
 		}
 	});
-
+		 $("#submit").on("click", function(){
+			var picture = new Pictures();
+			picture.set({
+				url: $("#url").val(),
+				description: $("#description").val()
+			})
+			picture.save(null, {
+				success: function(resp){
+				},error: function(err){
+					console.log("error", err);
+				}
+			});
+			location.href="/";
+			/*picture.navigate("")*/
+		});
 //collection
 	var Router = Backbone.Router.extend ({
 		initialize: function(){
@@ -41,6 +54,7 @@ $(document).ready(function (){
 			},
 			routes: {
 				"url/:objectId": "url",
+				"add":"add",
 				"":"index",
 				/*"add":"add",*/
 			}	 
@@ -57,15 +71,23 @@ $(document).ready(function (){
 				var picHTML = Mustache.render(picTemplate, picObj);
 				$("#desc").html(picHTML);
 				$("#gallery").hide();
+				$("#suma").hide();
 				$("#desc").show();
+				$("#submit").toggle();
 		}
 	});
 
 
 		router.on('route:index', function(){
-			var pic
 			$("#desc").hide();
+			$("#suma").hide();
 			$("#gallery").show();
+		});
+		router.on('route:add', function(){
+			$("#gallery").hide();
+			$("#desc").hide();
+			$("#suma").show();
+
 		})
 
 
