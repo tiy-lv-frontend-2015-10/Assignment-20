@@ -16,23 +16,41 @@
 
  //images 
 var ImageCollection = new Images();
-
  ImageCollection.fetch({
  success:function(resp){
 	 var imgObj = {'star':resp.toJSON()};	 
-	 var template = $("#warsTemplate").text();	 
+	 var template = $("#warsTemplate").text();
 	 var warsHTML = Mustache.render(template,imgObj);
 	 $("#sith").html(warsHTML);
  	}
  	});
-	
 
-    var Router = Backbone.Router.extend ({
-      initialize:function(){
-        Backbone.history.start({pushState:true});
+$("#submit").on("click", function(){
+	var image = new Image();
+	image.set({
+		URL:$("#url").val(),
+		Description: $("#desc").val(),
+		Name:$("#name").val()
+	});
+$("#url").val("");
+$("#desc").val("");
+$("#name").val("");
+image.save (null, {
+success: function(resp){
+},error: function(err){
+ console.log("error ", err);
+}
+});
+router.navigate("/");
+});
+
+ var Router = Backbone.Router.extend ({
+    initialize:function(){
+    Backbone.history.start({pushState:true});
       },
-      routes:{
+      routes: {
         "URL/:objectId":"URL",
+		  "add":"add",
         "":"index"
       }
     });
@@ -48,11 +66,22 @@ $("#jedi").html(userHTML);
 	$("#jedi").show();
 	});
 
-	//the clicky thingy
 		router.on('route:index' , function(){
 		$("#sith").show();
 		$("#jedi").hide();
 	});
+
+
+	router.on('route:add' , function(){
+	$("#add").toggleClass();
+	$("#sith").hide();
+	$("#jedi").hide();
+	$("#add").show();	
+	});
+	
+	
+
+
   $("body").on('click', 'a', function(e){
     e.preventDefault();
     var href = $(this).attr('href');

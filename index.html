@@ -13,7 +13,7 @@
   <div id="nav">
     <ul>
       <li><a href = "/">Home</a></li>
-      <li> <a href = "#Sites">Add an Image</a></li>
+      <li><a href = "/add">Add an Image</a></li>
     </ul>
   </div>
 
@@ -22,6 +22,18 @@
 <!--Mustache image holders-->
 <div id="sith"></div>
 <div id="jedi"></div>
+
+<div id="add" class="hidden">
+
+<form>
+  url: <input type="text" value="" id="url"><br>
+  Description: 
+   <input type="text"  value=""  id="desc"><br>
+   User Name <input type="text" value="" id="name"><br>
+  <input type="submit" value="Submit" id="submit">
+</form>	
+</div>
+	
 
 
 <!--images-->
@@ -38,8 +50,8 @@
 {{#deathstar}}
 <ul>
 <li><a href="/URL/{{objectId}}"><img src="{{URL}}"/></a></li>
-<li>{{Name}}</li>
-<br>{{Description}} </br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.
+<li id="username">{{Name}}</li>
+<br>{{Description}}<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.
 {{/deathstar}}
 </ul>
 </script>

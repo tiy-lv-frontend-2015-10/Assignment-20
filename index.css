@@ -39,3 +39,16 @@ color: brown}
 	
 }
 
+.hidden{display: none;}
+
+ #url {
+	 position: absolute;
+	 left: ;
+    width: 100px;
+}
+
+#desc{width:300px;}
+
+#username{position: absolute;
+left: 400px;}
+
