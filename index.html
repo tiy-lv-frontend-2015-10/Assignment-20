@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <title>PuppyGram</title>
   <link rel="stylesheet" href="main.css">
+  <link href='https://fonts.googleapis.com/css?family=Lakki+Reddy' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -70,14 +71,16 @@
               <p>{{Detail}}</p>
             </div> <!--photoTitle-->
           </div> <!--photoDetail-->
-
+          <div id="editForm">
            <form id="editData">
-            <input type="text" id="objectId" value="{{objectId}}">
-            <input type="text" id="Title" value="">
-            <input type="text" id="URL" value="">
-            <input type="text" name="editDescription" id="Detail" placeholder="Edit Detail" value="">
-            <input type="button" id="submitEditButton">
+           <h3>Edit this entry:</h3>
+            <input type="hidden" id="objectId" value="{{objectId}}">
+            <input type="text" id="Title" value="" placeholder="Enter title here">
+            <input type="text" id="URL" value="" placeholder="Enter photo URL here">
+            <input type="textarea" name="editDescription" id="Detail" placeholder="Enter detail here" value="">
+            <input type="button" id="submitEditButton" value="Submit">
             </form>
+            </div>
        {{/detailData}}
        
 
