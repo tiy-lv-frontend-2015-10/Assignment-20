@@ -32,19 +32,24 @@ $(document).ready(function (){
 		}
 	});
 		 $("#submit").on("click", function(){
-			var picture = new Pictures();
+			var picture = new Picture();
 			picture.set({
 				url: $("#url").val(),
-				description: $("#description").val()
-			})
+				description: $("#description").val(),
+				name: $("#name").val()
+			});
+				$("#url").val("");
+				$("#description").val("");
+				$("#name").val("");
 			picture.save(null, {
 				success: function(resp){
 				},error: function(err){
 					console.log("error", err);
 				}
+
 			});
-			location.href="/";
-			/*picture.navigate("")*/
+		
+			router.navigate("/");
 		});
 //collection
 	var Router = Backbone.Router.extend ({
@@ -75,6 +80,8 @@ $(document).ready(function (){
 				$("#desc").show();
 				$("#submit").toggle();
 		}
+
+		})	
 	});
 
 
@@ -87,11 +94,12 @@ $(document).ready(function (){
 			$("#gallery").hide();
 			$("#desc").hide();
 			$("#suma").show();
+			$("#btn").toggleClass();
 
 		})
 
 
-		}); 
+	
 
 	$("body").on("click", "a", function(e){
 		e.preventDefault();
@@ -100,13 +108,9 @@ $(document).ready(function (){
 		router.navigate(href, {trigger:true});
 	});
 
+	}); 
 
-
-
-
-
-
-}); //doc.ready close
+ //doc.ready close
 
 
 
