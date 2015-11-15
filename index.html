@@ -11,29 +11,39 @@
 <body>
   <div class="header">
   <div id="title">
-    <h1>Nickstagram</h1>
+   <h1>Nickstagram</h1>
   </div>
   <div id="home">
-    <a href="#">Home</a>
+    <a href="/">Home</a>
   </div>
-  <div id="logIn">
-    <a href="#">Log In</a>
+  <div id="add">
+    <a href="/add">Add</a>
+  </div>
+    <div id="edit">
+    <a href="#">Edit</a>
   </div>
 </div>
   <div id="pictureContainer"></div>
   <div id="detailContainer"></div>
-  <div id="addEditContainer"></div>
+
+  <div class="addPage">
+    <form>
+      <input type='text' placeholder="Image Url">
+      </br><input type='text' placeholder="Title">
+      </br><input type='text' placeholder="Detail">
+      <button type='submit'>Add</button>
+    </form>
 
 
 
 
+
+  </div>
 
   <script type="x-tmpl-mustache" id="urlTemplate">
-    {{#data}}
-
+  {{#data}}
       <a href="/image/{{objectId}}"><img src="{{url}}"></a>
-
-    {{/data}}
+  {{/data}}
   </script>
 
   <script type="x-tmpl-mustache" id="detailTemplate">
@@ -41,7 +51,7 @@
     {{#data}}
       <img src="{{url}}">
       <div id="description">
-        <p> {{user}} </p>
+        <p id="user"> {{user}} </p>
         <p>{{title}} -</p>
         <p>{{detail}}</p>
       </div>
@@ -49,12 +59,14 @@
     </div>
   </script>
 
-  <script type="x-tmpl-mustache" id="addEditTemplate">
+  <script type="x-tmpl-mustache" id="addTemplate">
 
+  </script
 
-
+  <script type="x-tmpl-mustache" id="editTemplate">
 
   </script>
+
 
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

@@ -36,6 +36,8 @@ var Router = Backbone.Router.extend({
   },
     routes: {
       "image/:objectId": "image",
+      "add": "add",
+      "edit": "edit",
       "": "index"
   }
 });
@@ -63,6 +65,14 @@ router.on('route:index', function(){
   $("#detailContainer").hide();
   $("#pictureContainer").show();
 });
+
+router.on("route:add", function() {
+  $("#pictureContainer").hide();
+  $(".addPage").show();
+});
+
+
+
 
 $('body').on('click','a', function(e){
   e.preventDefault();

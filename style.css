@@ -30,13 +30,23 @@ a {
   color: #004879;
 }
 
-#logIn {
+#add {
   position: relative;
   bottom: 2em;
   left: 67em;
 }
 
-#logIn a {
+#edit {
+  position: relative;
+  bottom: 3.1em;
+  left: 70em;
+}
+
+#add a {
+  color: #004879;
+}
+
+#edit a {
   color: #004879;
 }
 
@@ -64,4 +74,9 @@ img {
   bottom: 33em;
   width: 500px;
   color: #004879;
+}
+
+#user {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 5px;
 }
