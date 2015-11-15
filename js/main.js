@@ -9,26 +9,28 @@ $(document).ready(function (){
 			url: null
 		},
 		_parse_class_name: "Image"
-	}); 	
+	}); 
+
+	var picture = new Picture();	
 
 
-	var Picture = Backbone.Collection.extend({
+	var Pictures = Backbone.Collection.extend({
 		model: Picture,
 		_parse_class_name: "Image"
 	});
 
-	var ImagesCollection = new Picture();
-
+	var ImagesCollection = new Pictures();
 	ImagesCollection.fetch({
 		success: function(resp){
 		var imgObj = {"pics": resp.toJSON()};
 		var imageTemplate = $("#imageTemplate").text();
 		var imageHTML = Mustache.render(imageTemplate, imgObj);
 			$("#gallery").html(imageHTML);
-				console.log("success: ", resp);	
-				console.log(imgObj);
+			
+		},
+		error: function(err){
+			console.log(err);
 		}
-
 	});
 
 //collection
@@ -39,22 +41,54 @@ $(document).ready(function (){
 			},
 			routes: {
 				"url/:objectId": "url",
-				"":"index"
+				"":"index",
+				/*"add":"add",*/
 			}	 
 	});
 //individual
 	var router = new Router();
 
-	router.on('router:url', function(objectId) {
-		var info = new Picture({objectId:objectId});
-		info.fetch({
-			success:function(resp)
+	router.on('route:url', function(objectId) {
+		var url = new Picture({objectId:objectId});
+		url.fetch({
+			success:function(resp) {
 				var picObj = {'description':resp.toJSON()};
-				var PicTemplate = $('#info')
-
+				var picTemplate = $('#info').text();
+				var picHTML = Mustache.render(picTemplate, picObj);
+				$("#desc").html(picHTML);
+				$("#gallery").hide();
+				$("#desc").show();
 		}
 	});
 
 
+		router.on('route:index', function(){
+			var pic
+			$("#desc").hide();
+			$("#gallery").show();
+		})
+
+
+		}); 
+
+	$("body").on("click", "a", function(e){
+		e.preventDefault();
+		var href = $(this).attr('href');
+		href = href.substr(1);
+		router.navigate(href, {trigger:true});
+	});
+
+
+
+
+
+
 
 }); //doc.ready close
+
+
+
+
+
+
+
