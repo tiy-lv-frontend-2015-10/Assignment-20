@@ -4,18 +4,24 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 <link rel="stylesheet" href="normalize.css">	
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
 <ul class="navs">
-	<li><a href="/">index</a></li>
-	<li><a href="/add">upload</a></li>
+	<li class="home"><a href="/">Home</a></li>
+	<li><a href="/add">Upload</a></li>
 </ul>
+
+
 
 
 <div id="transitionCon">
 	<div id="parent">
+
+	<div class="profile"></div>
+	<p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat est modi eveniet officiis laudantium, dolores magni sit sint minus, totam voluptatibus. Qui in, architecto iste pariatur, debitis quis dolores animi!</p>
 		<div id="gallery"></div>
 
 	</div>
@@ -56,9 +62,11 @@
 
 <script type="x-tmpl-mustache" id="info">
 	{{#description}}
+	<div class="secondp">
 		<img class="big" src="{{url}}">
-			<p>{{name}}</p>
+			<h1>{{name}}</h1>
 			<p>{{description}}</p>
+	</div>
 		
 
 	{{/description}}

@@ -26,6 +26,7 @@ $(document).ready(function (){
 		var imageHTML = Mustache.render(imageTemplate, imgObj);
 			$("#gallery").html(imageHTML);
 			$("#suma").hide();
+			$()
 		
 			
 		},
@@ -81,7 +82,7 @@ $(document).ready(function (){
 				$("#gallery").hide();
 				$("#suma").hide();
 				$("#desc").show();
-				$("parent").hide();
+				$("#parent").hide();
 		}
 
 		})	
@@ -96,6 +97,7 @@ $(document).ready(function (){
 			$("#gallery").hide();
 			$("#desc").hide();
 			$("#suma").show();
+			$("#parent").hide();
 			$("#btn").toggleClass();
 
 		})

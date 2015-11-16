@@ -2,14 +2,20 @@
 TRANSFORMATIONS
 *************/
 body {
-	background: #3BB9FF;
+	
 	background-size: 100%;
 	width: 100%;
+	transition: background 1s ease-in-out;
+}
+body:hover {
+	background:  #299DFF;
+
 }
 
 #transitionCon{
 	perspective: 800px;
 	transition: perspective 2s ease-in-out;
+	display: relative;
 
 }
 
@@ -24,27 +30,69 @@ body {
     min-height: 100%;
     position: relative;
     background: linear-gradient(to right,  #FF78D7,#F56ECD,#F52887, #EB1E7D, #CD005F);
-
+	transition:background 4s ease-in-out;
  
 }
-/*********/
 
-.navs{
+#parent:hover{
+
+	 background: linear-gradient(to right,  #FF78D7,#F56ECD,#F52887);
+ 
+}
+/***********
+navs
+*****/
+
+ul.navs{
 	position: relative;
 	z-index: 1;
+	list-style: none;
+	top:30px;
+
 }
-header {
-	
+.navs li{
+	display: inline;
+	padding-left: 15px;
 }
 
-.profile-pic {
-	border-radius: 100%;
+.navs a {
+	text-decoration: none;
+	font-size: 2em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+}
+
+.navs a:hover {
+	text-decoration: underline;
+}
+
+/**************
+PROFILE
+***********/
+
+.profile {
 	height: 200px;
-	width: 200px;
-	background: red;
+    width: 300px;
+    background: red;
+    position: relative;
+    top: 110px;
+  	left: 50px;
+    margin: 0px;
+    
 }
 
+.bio {
+	width: 284px;
+    position: relative;
+    top: 108px;
+    left: 60px;
+    text-align: center;
 
+}
+
+/**************
+GALLERY
+***********/
 .circle{
 	border-radius: 100%;
 	width:125px;
@@ -58,8 +106,8 @@ header {
 	width: 60%;
 	display: block;
 	margin: 0px 420px;
-	padding-bottom: 70px;
-	padding-top: 70px;
+	position: relative;
+    bottom: 253px;
 	transition: transform 1s ease;
 }
 #gallery:hover{
@@ -88,12 +136,31 @@ header {
 	
 }
 
+/**************
+URL PAGE
+****************/
+.secondp{
+	box-sizing: border-box;
+    width: 80%;
+    margin: 20px 24%;
+    position: relative;
+    display: inline-block;
+}
+.secondp p {
+	position: relative;
+    width: 52%;
+    text-align: center;
+}
+
+
+
 .big {
-	border-radius: 100%;
-	width:100px;
-	height:100px;
+    width: 500px;
+    height: 500px;
+    position: relative;
 
 }
+
 
 
 
