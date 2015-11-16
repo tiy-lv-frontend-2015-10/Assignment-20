@@ -1,0 +1,228 @@
+/***************
+TRANSFORMATIONS
+*************/
+body {
+	
+	background-size: 100%;
+	width: 100%;
+	transition: background 1s ease-in-out;
+}
+body:hover {
+	background:  #299DFF;
+
+}
+
+#transitionCon{
+	perspective: 800px;
+	transition: perspective 2s ease-in-out;
+	display: relative;
+
+}
+
+ #transitionCon:hover{
+	perspective: 6000px;
+
+}
+
+#parent{
+	transform: rotateY(35deg);
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    background: linear-gradient(to right,  #FF78D7,#F56ECD,#F52887, #EB1E7D, #CD005F);
+	transition:background 4s ease-in-out;
+ 
+}
+
+#parent:hover{
+
+	 background: linear-gradient(to right,  #FF78D7,#F56ECD,#F52887);
+ 
+}
+/***********
+navs
+*****/
+
+ul.navs{
+	position: relative;
+	z-index: 1;
+	list-style: none;
+	top:30px;
+
+}
+.navs li{
+	display: inline;
+	padding-left: 15px;
+}
+
+.navs a {
+	text-decoration: none;
+	font-size: 2em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+}
+
+.navs a:hover {
+	text-decoration: underline;
+}
+
+/**************
+PROFILE
+***********/
+
+.profile {
+	height: 200px;
+    width: 300px;
+    background: red;
+    position: relative;
+    top: 110px;
+  	left: 110px;
+    margin: 0px;
+    
+}
+
+.bio {
+	width: 284px;
+    position: relative;
+    top: 108px;
+    left: 110px;
+    text-align: center;
+
+}
+
+/**************
+GALLERY
+***********/
+.circle{
+	border-radius: 100%;
+	width:125px;
+	height:125px;
+}
+
+
+
+
+#gallery{
+	width: 60%;
+	display: block;
+	margin: 0px 420px;
+	position: relative;
+    bottom: 253px;
+	transition: transform 1s ease;
+}
+#gallery:hover{
+	transform: rotateY(10deg);
+}
+
+
+#gallery ul{
+	list-style: none;
+	display: inline;
+	
+}
+
+
+#gallery ul li{
+	display: inline;
+	position: relative;
+	transition: bottom 1s ease-in-out;
+	
+}
+
+#gallery ul li:hover{
+	display: inline;
+	bottom: 20px;
+	box-shadow: -20px 20px 50px #A50037;
+	
+}
+
+/**************
+URL PAGE
+****************/
+.secondp{
+	box-sizing: border-box;
+    width: 80%;
+    margin: 20px 24%;
+    position: relative;
+    display: inline-block;
+}
+.secondp p {
+	position: relative;
+    width: 52%;
+    text-align: center;
+}
+
+
+
+.big {
+    width: 500px;
+    height: 500px;
+    position: relative;
+
+}
+
+/**************
+UPLOAD PAGE
+****************/
+
+#suma{
+	margin: 50px auto;
+    width: 60%;
+    position: relative;
+    top: 50px;
+}
+
+.inputting{
+	list-style: none;
+}
+
+
+
+.inputting li{
+    display: inline;
+    float:left;
+    padding-left: 5px;
+}
+
+.inputting li input{
+ 	border: none;
+ 	border-left: 5px solid #FF8A14;
+ 	padding-left: 5px;
+ 	height: 2em;
+}
+
+#btn a{
+	text-decoration: none;
+	color: white;
+	font-size: 1.5em;
+}
+
+#submit{
+	border: none;
+    display: block;
+    padding: 10px;
+    bottom: 5px;
+    position: relative;
+    background: #FF8A14;
+    text-decoration: none;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
