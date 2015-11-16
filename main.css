@@ -1,3 +1,38 @@
+/***************
+TRANSFORMATIONS
+*************/
+body {
+	background: #3BB9FF;
+	background-size: 100%;
+	width: 100%;
+}
+
+#transitionCon{
+	perspective: 800px;
+	transition: perspective 2s ease-in-out;
+
+}
+
+ #transitionCon:hover{
+	perspective: 6000px;
+
+}
+
+#parent{
+	transform: rotateY(35deg);
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    background: linear-gradient(to right,  #FF78D7,#F56ECD,#F52887, #EB1E7D, #CD005F);
+
+ 
+}
+/*********/
+
+.navs{
+	position: relative;
+	z-index: 1;
+}
 header {
 	
 }
@@ -12,28 +47,45 @@ header {
 
 .circle{
 	border-radius: 100%;
-	width:100px;
-	height:100px;
+	width:125px;
+	height:125px;
 }
 
 
 
 
 #gallery{
-	display: inline;
+	width: 60%;
+	display: block;
+	margin: 0px 420px;
+	padding-bottom: 70px;
+	padding-top: 70px;
+	transition: transform 1s ease;
+}
+#gallery:hover{
+	transform: rotateY(10deg);
 }
 
 
 #gallery ul{
 	list-style: none;
 	display: inline;
-	padding: 5px;
-
+	
 }
 
 
 #gallery ul li{
 	display: inline;
+	position: relative;
+	transition: bottom 1s ease-in-out;
+	
+}
+
+#gallery ul li:hover{
+	display: inline;
+	bottom: 20px;
+	box-shadow: -20px 20px 50px #A50037;
+	
 }
 
 .big {
@@ -42,3 +94,24 @@ header {
 	height:100px;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

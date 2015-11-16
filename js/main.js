@@ -25,6 +25,8 @@ $(document).ready(function (){
 		var imageTemplate = $("#imageTemplate").text();
 		var imageHTML = Mustache.render(imageTemplate, imgObj);
 			$("#gallery").html(imageHTML);
+			$("#suma").hide();
+		
 			
 		},
 		error: function(err){
@@ -49,8 +51,7 @@ $(document).ready(function (){
 
 			});
 		
-			router.navigate("/");
-			$("#suma").hide();
+			router.href("/");
 		});
 //collection
 	var Router = Backbone.Router.extend ({
@@ -80,6 +81,7 @@ $(document).ready(function (){
 				$("#gallery").hide();
 				$("#suma").hide();
 				$("#desc").show();
+				$("parent").hide();
 		}
 
 		})	
