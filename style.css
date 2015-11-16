@@ -58,10 +58,26 @@ display: inline-block;
 width: 39em;
 float: right;
 }
+#editForm{
+display: inline-block;
+width: 39em;
+}
 .large{
 	height: 500px;
 	width: 500px;
 }
 .hidden{
 	display: none;
+}
+.url{
+	width: 30em;
+	height: 3em;
+}
+.decription{
+	width: 30em;
+	height: 3em;
+}
+#addForm{
+	width:10% 20%;
+	margin: 0% 40%;
 }

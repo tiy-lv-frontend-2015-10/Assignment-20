@@ -52,8 +52,7 @@ var Gif = Backbone.Model.extend({
     },
     routes: {
     "add":"add",
-    "edit":"edit",
-   	"details/:objectId" : "details",
+    "details/:objectId" : "details",
     "": "index"
   }
   });
@@ -101,14 +100,6 @@ router.on('route:details', function(objectId){
       $("#details").hide();
       $("#add").show();
       
-    });
-
-    router.on('route:edit', function(){
-      $("#home").hide();
-      $("#details").hide();
-      $("#add").hide();
-      $("#edit").show();
-
     });
     
     router.on('route:index', function(){

@@ -13,16 +13,15 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/add">Add</a></li>
-        <li><a href="/edit">Edit</a></li>
       </ul>
       </div>
       <div id="home"></div>
       <div id="details"></div>
       <div id="add" class="hidden">
-        <form>
-          <input type="text"  id="url" value="">
-          <input type="text" id="decription" value="">
-          <input type="button" id="submit">
+        <form id="addForm">
+          <label>Add Url<br><input class="url" type="text"  id="url" value=""></lable><br>
+          <lanel>Add Description<br><input class="decription" type="text" id="decription" value=""><br>
+          <input type="button" id="submit" value="Submit">
         </form>
       </div>
     </div>
@@ -41,12 +40,13 @@
 {{#details}}
 <img class ="large"src="{{url}}">
 <p><strong>{{Description}}.</strong></br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iusto similique, dicta architecto nihil, sunt debitis, ad nulla ipsa dolore libero consequuntur reiciendis animi et reprehenderit fugit vitae tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo molestiae, quae veritatis. Harum itaque, magni sequi obcaecati, voluptatum similique labore possimus praesentium autem porro veniam ullam et aliquam non, eaque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iusto similique, dicta architecto nihil, sunt debitis, ad nulla ipsa dolore libero consequuntur reiciendis animi et reprehenderit fugit vitae tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo molestiae, quae veritatis. Harum itaque, magni sequi obcaecati, voluptatum similique labore possimus praesentium autem porro veniam ullam et aliquam non, eaque.</p>
-        <form>
-          <input type="text"  id="objectId" value="{{objectId}}">
-          <input type="text"  id="url" value="">
-          <input type="text" id="decription" value="">
-          <input type="button" id="submit">
+        <form id="editForm">
+          <input type="hidden"  id="objectId" value="{{objectId}}"><br>
+          <label>Edit URL<br><input class="url" type="text"  id="url" value=""></label><br>
+          <label>Edit Description<br><input class="decription" type="text" id="decription" value=""></br>
+          <input type="button" id="submit" value="Submit">
         </form>
+
 {{/details}}
 </div>
 <div id="disqus_thread"></div>
