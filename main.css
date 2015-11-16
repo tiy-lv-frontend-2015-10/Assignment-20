@@ -1,0 +1,101 @@
+body {
+    /*background-color: rgb(2, 4, 0);*/
+    background: -webkit-radial-gradient(circle, black, lightblue); /* Safari */
+    background: -o-radial-gradient(circle, black, lightblue); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, black, lightblue); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, black, lightblue); /* Standard syntax */
+}
+#container {
+    min-width: 1275px;
+    max-width: 1300px;
+}
+
+header {}
+
+h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 3px 3px 1px black;
+}
+
+.headerButtons {
+    padding: 10px 15px;
+    color: black;
+    border-radius: 10%;
+    margin-left: 5px;
+}
+#homeBtn {
+    margin-left: 480px;
+}
+
+/*1st Page --- Main Pictures*/
+#picturePageDiv {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+.mainpics {
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.mainPics img {
+    width: 275px;
+    height: 200px;
+    display: inline;
+    float: left;
+    margin: .5em 0 0 .5em;
+    border-radius: 2px;
+}
+
+.clearFloat {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+.pushDescDown {
+    padding-bottom: 8em;
+}
+
+/*2nd Page --- Detail View*/
+.hidden {
+    display: none;
+}
+
+#detailPageDiv {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.detailPics img {
+    width: 350px;
+    height: 275px;
+}
+
+.breathRight {
+    padding-right: 8em;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.descStyle {
+    margin: 0 0 0 10em;
+    padding: 0 0 0 10em;
+    color: white;
+}
+
+/*form to add*/
+#addPageDiv {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#addForm {
+    padding: 1em;
+}

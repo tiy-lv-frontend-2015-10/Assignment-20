@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Animal Lovers Delight</title>
+</head>
+
+<body>
+  <div id="container">
+  <div id="header">
+      <h1>ANIMAL PHOTO ALBUM</h1>
+      <a href="/"><input id="homeBtn" class="headerButtons" type="button" name="home" value="Home" size="25"></a>
+      <!--<a href="/details"><input class="headerButtons" type="button" name="details" value="Details" size="25"></a>-->
+      <a href="/add"><input class="headerButtons" type="button" name="add" value="Add" size="25"></a>
+      
+  </div>
+
+  <div id="picturePageDiv"></div>
+
+  <div id="detailPageDiv"></div>
+
+  <div id="addPageDiv" class="hidden">
+      <form id="addForm">
+          Copy URL Link Here:
+          <input id="saveImg" type="text" value=""><br>
+          Title:
+          <input id="saveTitle" type="text"  name="Title" value=""><br>
+          Description:
+          <input id="saveDescription" type="text" value="">
+      </form>
+      <a><input id="saveButton" class="addButtons" type="button" name="save" value="Save"></a>
+  </div>
+  <div id="editPageDiv"></div>
+  </div><!--closes container-->
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="backbone-parse.js"></script>
+  <script src="main.js"></script>
+
+  <script type="x-tmpl-mustache" id="animalPicTemplate">
+    {{#mAnimalPics}}
+     <div id="mPicsDiv">
+     <p class="mainPics"><a href="/detail/{{objectId}}"><img src="{{url}}"/></a></p>
+     </div>
+    {{/mAnimalPics}}
+  </script>
+
+  <script type="x-tmpl-mustache" id="animalDescriptionTemplate">
+    {{#mAnimalDescription}}
+    <p class="detailPics floatLeft breathRight"><a href="/Description/{{objectId}}"><img src="{{url}}"/></a></p>
+    <p class="descStyle">{{title}}</p>
+    <p class="descStyle">{{Description}}</p>
+    <p class="clearFloat"></p>
+    <p><a href="/edit"><input id="editButton" class="headerButtons" type="button" name="edit" value="Edit" size="25"></a></p>
+      <div id="editForm">
+           <form>
+                Copy URL Link Here:
+                <input id="editURL" type="text" value=""><br>
+                Title:
+                <input id="editTitle" type="text"  name="Title" value=""><br>
+                Description:
+          <input id="editDescription" type="text" value="">
+      </form>
+      </div>
+    {{/mAnimalDescription}}
+  </script>
+
+  <script type="x-tmpl-mustache" id="animalEditTemplate">
+  {{#mAnimalEdit}}
+  <p class="detailPics floatLeft"><a href="/detail/{{objectId}}"><img src="{{url}}"/></a></p>
+  <p>{{title}}</p>
+  <p class="descStyle">{{Description}}</p>
+  <p class="clearFloat"></p>
+  {{/mAnimalEdit}}
+  </script>
+
+
+</body>
+</html>
