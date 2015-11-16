@@ -43,8 +43,8 @@ h1 {
 }
 
 .petImage img{
-	width: 28%;
-	height: 28%;
+	width: 260px;
+	height: 260px;
 	border: 1px solid black;
 	border-radius: 15px;
 	margin: 5px;
