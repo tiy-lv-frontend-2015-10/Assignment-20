@@ -1,0 +1,225 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+body {
+	height:500px;
+}
+#header {
+	width:730px;
+	margin:auto;
+}
+
+#memesDiv {
+	width:750px;
+	margin:auto;
+	position: relative;
+	top:20px;
+}
+
+.imgMeme {
+	width:225px;
+	height:225px;
+	border: 1px solid #F7F7F7;
+	border-radius:10px;
+
+}
+
+.fontawesome-edit {
+	position: absolute;
+	bottom:190px;
+	left:15px;
+	background-color: #fff;
+	padding:5px;
+	display: block;
+	border-radius:3px;
+	z-index: 2;
+}
+
+.hidden {
+	display: none;
+}
+
+
+
+#nav {
+	width:730px;
+	height:40px;
+	margin:auto;
+	background:#F7F7F7;
+	text-align: center;
+	position: relative;
+}
+#nav li{
+	display: inline;
+	position: relative;
+	top:10px;
+	left:10px;	
+	padding-right: 90px;
+}
+
+
+a {
+	color:black;
+	text-decoration: none;
+}
+a:visited {
+	color:black;
+}
+.images {
+	display: inline;
+	margin:10px;
+	width:225px;
+	position: relative;
+}
+
+.imgMeme:hover {
+	opacity: .9;
+	box-shadow:3px 3px 2px #888888;
+}
+
+.imagesLarge {
+	width:500px;
+	height: 500px;
+	border-radius:2px;
+	float: left;
+}
+
+#oneMemeDiv {
+	margin:auto;
+	width:1000px;
+}
+
+#descriptionDiv {
+	float: left;
+	width: 400px;
+	display: inline;
+	margin-left:20px;
+	position: relative;
+	top:10px;
+}
+
+li {
+	list-style: none;
+}
+
+
+#memeContainer {
+	width:1000px;
+}
+
+#title {
+	margin:0;
+	padding:0;
+}
+
+.profileImg {
+	border-radius:20px;
+}
+
+#user {
+	position: absolute;
+	top:10px;
+	left:45px;
+	color:#155889;
+}
+
+#line {
+	height: 0px;
+	border:0px;
+	border-top:1px solid #EEEFEF;
+
+}
+
+#formDiv {
+	display: none;
+	width:970px;
+	margin:auto;
+}
+#description{
+	width:300px;
+	height: 200px;
+}
+
+#placehold {
+	float: left;
+	position: relative;
+	top:30px;
+	border-radius:5px;
+}
+#addForm {
+	display: none;
+	width:315px;
+	float: right;
+	position: relative;
+	
+	left:20px;
+	top:30px;
+	
+}
+
+#addForm input {
+	display: block;
+	width:300px;
+	padding-top: 20px;
+	font-size: 14px;
+}
+#editDiv {
+	display: none;
+	width:1000px;
+	margin:auto;
+}
+
+#userVal {
+	position: absolute;
+	top:10px;
+	left:45px;
+	color:#155889;
+}
+#deSpan {
+	display: block;
+}
+#editDescription {
+	width:300px;
+	height: 200px;
+}
+
+#editSubmitBtn {
+	background-color:#3838ea;
+	color: #fff;
+	height:37px;
+	width:100px;
+	border:1px solid #F7F7F7;
+	position: absolute;
+	right:0px;
+	top:1px;
+	display: none;
+
+}
+
+#editForm input {
+	display: block;
+	width:300px;
+	padding-top: 20px;
+	font-size: 14px;
+
+}
+
+#changeData {
+	position: relative;
+	float: left;
+	width:500px;
+	left:20px;
+	top:15px;
+}
+
+#submitBtn {
+	height:40px;
+	width:100px;
+	display: block;
+}
+
+
