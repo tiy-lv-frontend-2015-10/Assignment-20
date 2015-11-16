@@ -10,12 +10,7 @@ $(document).ready(function(){
 	  	user: null,
 	  	title: null,
 	  	description: null
-	  },
-	 validate: function(attrs) {
-	 	if(!attrs.url) {
-	 		$()
-	 	}
-	 }
+	  }
 	});
 
 	var Memes = Backbone.Collection.extend({
@@ -40,6 +35,12 @@ $(document).ready(function(){
 
 	$("#edit").on('click', function(){
 		$(".fontawesome-edit").toggleClass("hidden");
+		$("#memesDiv").show();
+		$("#oneMemeDiv").hide();
+		$("#nav").css("width","730px");
+		$("#addForm").hide();
+		$("#editDiv").hide();
+
 	})
 
 
@@ -82,14 +83,20 @@ $(document).ready(function(){
 	router.on('route:add', function() {
 		$("#memesDiv").hide();
 		$("#oneMemeDiv").hide();
+		$("#formDiv").show();
 		$("#addForm").show();
+		$("#editDiv").hide();
+		$("#nav").css("width","730px");
 	});
 
 	router.on('route:index', function() {
 		$("#memesDiv").show();
 		$("#oneMemeDiv").hide();
 		$("#nav").css("width","730px");
+		$("#formDiv").hide();
 		$("#addForm").hide();
+		$("#editDiv").hide();
+		
 
 	});
 
@@ -97,23 +104,51 @@ $(document).ready(function(){
 		var memeEdit = new Meme({objectId:objectId});
 		memeEdit.fetch({
 			success: function(resp) {
-				console.log(resp);
+
 				var editObj = {'data':resp.toJSON()};
 				var template3=$('#formEdit').text();
 				var editHTML = Mustache.render(template3,editObj);
 				$("#editDiv").html(editHTML);
+
 			}
 		});
-
-			$("#memesDiv").hide();
-			$("#oneMemeDiv").hide();
-			$("#editDiv").show();
-			$("#nav").css("width","1000px");
+		$("#editSubmitBtn").show();
+		$("#memesDiv").hide();
+		$("#oneMemeDiv").hide();
+		$("#placehold").hide();
+		$("#editDiv").show();
+		$("#nav").css("width","1000px");
 	});
+
+		$("#editSubmitBtn").on('click', function(e){
+
+	 	e.preventDefault();
+	 	var edit= new Meme();
+	 	edit.set({
+	 		url: $("#urlVal").html(),
+	 		user: $("#userVal").html(),
+	 		title: $("#editTitle").val(),
+	 		description: $("#editDescription").val(),
+	 		objectId: $("#objectId").val()
+
+	 	})
+	 	
+	 		edit.save(null, {
+	 		success: function(resp) {
+	 			console.log(resp);
+	 		},
+	 		error: function(err) {
+	 			console.log(err);
+	 		}
+
+	 		});
+	 		location.href="/";
+	 	});
 
 
 	 $("#submitBtn").on('click', function(e){
-
+	 	$("#formDiv").hide();
+		$("#addForm").hide();
 	 	e.preventDefault();
 	 	var test= new Meme();
 	 	test.set({
@@ -135,6 +170,7 @@ $(document).ready(function(){
 	 		}
 	 	});
 	 	location.href="/";
+
 	 });
 	  
 
@@ -144,6 +180,10 @@ $(document).ready(function(){
 	  href = href.substr(1);
 	  router.navigate(href, {trigger:true});
 	});
+
+
+
+
 
 
 

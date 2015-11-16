@@ -18,18 +18,22 @@
 <div id="oneMemeDiv"></div>
 <div id="editDiv"></div>
 
+
+
 <div id="formDiv">
+	<img id="placehold" src="http://placehold.it/225x225"/>
 	<form id="addForm">
 		<span>Your Name: </span><input id="name"/>
 		<span>Title: </span><input id="title"/>
 		
 		<span>Url: </span><input id="url"/>
 		<span>Description: </span><input id="description"/>
-
-		<button id="submitBtn">Submit</button>
+		<button id="submitBtn"></button>
 
 	</form>
 </div>
+
+
 
 <script id="memesTemplate" type="x-tmpl-mustache">
 	{{#data}}
@@ -59,19 +63,36 @@
 </script>
 
 <script id="formEdit" type="x-tmpl-mustache">
-	<div id="formEdit">
-	<form id="editForm">
-	{{#data}}
-		<img class="imagesLarge" src="{{url}}"/>
-		<div id="changeData">
-		<p>{{user}}</p>
-		<span>Title: </span><input id="editTitle" value="{{title}}"/>
-		<span>Description: </span><input id="editDescription" value="{{description}}"/>
+	<div id="formContain">
 
-		<button id="editSubmitBtn">Submit</button>
+	{{#data}}
+	<form id="editForm">
+
+		<img class="imagesLarge" src="{{url}}"/>
+
+		<div id="changeData">
+
+			<input type="hidden" id="objectId"  value="{{objectId}}"/>
+
+			<p "userVal">{{user}}</p>
+
+			<span>Title: </span><input id="editTitle" value="{{title}}"/>
+
+			<span>Description: </span><input id="editDescription" value="{{description}}"/>
+
+			<span>URL:</span>
+
+			<p id="urlVal">{{url}}</p>
+
+			<button id="editSubmitBtn">Edit</button>
+
+		
 		</div>
-	{{/data}}
+
 	</form>
+
+	{{/data}}
+
 </div>
 </script>
 

@@ -9,6 +9,8 @@
 #memesDiv {
 	width:750px;
 	margin:auto;
+	position: relative;
+	top:20px;
 }
 
 .imgMeme {
@@ -114,10 +116,25 @@ li {
 
 }
 
-#addForm {
+#formDiv {
 	display: none;
 	width:730px;
 	margin:auto;
+}
+
+#placehold {
+	float: left;
+	position: relative;
+	top:30px;
+	border-radius:5px;
+}
+#addForm {
+	display: none;
+	width:315px;
+	float: right;
+	position: relative;
+	top:30px;
+	
 }
 
 #addForm input {
@@ -132,11 +149,20 @@ li {
 	margin:auto;
 }
 
+#editSubmitBtn {
+	background-color:#3838ea;
+	color: #fff;
+	height:30px;
+	width:100px;
+	border:1px solid #F7F7F7;
+}
+
 #editForm input {
 	display: block;
 	width:300px;
 	padding-top: 20px;
 	font-size: 14px;
+
 }
 
 #changeData {
@@ -147,4 +173,8 @@ li {
 	height:40px;
 	width:100px;
 	display: block;
+}
+
+#objectId {
+	display: none;
 }
