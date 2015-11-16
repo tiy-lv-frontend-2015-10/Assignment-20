@@ -1,0 +1,237 @@
+html{
+	font-family: 'Alice', cursive;	
+}
+
+#mainContainer{
+	width: 100%;
+	margin: auto;
+	background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/confectionary.png')
+}
+
+#header{
+	width: 100%;
+	height: 10%;
+	margin: 0;
+	top: 10px;
+	text-align: center;
+	border-bottom: 3px solid black;
+	background-color: #6D808E;
+}
+
+h1 {
+	font-family: 'Alice', cursive;
+	font-size: 40px;
+	margin: 0;
+	padding: 0;
+}
+
+#header p{
+	font-family: 'Alice', cursive;
+	margin: 0;
+	padding: 0;
+}
+
+#imageDiv{
+	width: 80%;
+	margin: auto;
+}
+
+.petImage li{
+	list-style: none;
+	position: relative;
+	display: inline-block;
+}
+
+.petImage img{
+	position: relative;
+	width: 260px;
+	height: 260px;
+	border: 1px solid black;
+	border-radius: 15px;
+	margin: 10px;
+}
+
+#navBar{
+	width: 90%;
+	height: 60px;
+	margin: auto;
+}
+
+#navBar ul{
+	margin: 0;
+}
+
+#navBar li{
+	list-style: none;
+	float: left;
+	margin-top: 20px;
+	margin-left: 40px;
+	font-size: 18px;
+}
+
+#navBar a{
+	text-decoration: none;
+	color: #34434D;
+}
+
+#navBar li a:hover{
+	background-color: black;
+	color: white;
+}
+
+#descripDiv{
+	width: 80%;
+	margin: auto;
+}
+
+#descripData img{
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	border: 2px solid black;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+#picDiv{
+	position: relative;
+	display: inline-block;
+	margin: auto;
+	width: 52%;
+}
+
+#descriptionDiv{
+	position: relative;
+	display: inline-block;
+	margin: auto;
+	float: right;
+	width: 40%;
+}
+
+.titleDescrip{
+	position: relative;
+	display: inline-block;
+	font-size: 30px;
+}
+
+.descrip{
+	position: relative;
+	display: inline-block;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+}
+
+#edit{
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	height: 40px;
+	margin: auto;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+#edit a{
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	font-family: 'Alice', cursive;
+}
+
+#addDiv{
+	display: none;
+	position: relative;
+	width: 60%;
+	height: 500px;
+	margin: auto;
+}
+
+#url {
+	position: relative;
+	margin: auto;
+	width: 600px;
+	height: 30px;
+	outline: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding-left: 15px;
+}
+
+#title{
+	position: relative;
+	margin: auto;
+	width: 600px;
+	height: 30px;
+	outline: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding-left: 15px;
+}
+
+#d_page{
+	position: relative;
+	margin: auto;
+	width: 600px;
+	height: 30px;
+	outline: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-bottom: 100px;
+}
+
+#saveBtn{
+	position: relative;
+	margin: 15px;
+	outline: none;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 60px;
+	height: 30px;
+}
+
+#editDiv{
+	display: none;
+	position: relative;
+	margin:auto;
+	width: 60%;
+	height: 500px;
+	top:10px;
+}
+
+#editData{
+	position: relative;
+	width: 40%;
+	height: 20px;
+	padding-left: 10px;
+	padding-bottom: 80px;
+	border: 2px solid black;
+	border-radius: 10px;
+	outline: none;
+}
+
+#editSubmit {
+	position: relative;
+	margin: 10px;
+	width: 12%;
+	height: 6%;
+	font-family: 'Alice', cursive;
+	background: black;
+	color: white;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+#footer {
+	width: 100%;
+	height: 55px;
+	margin: 0;
+	padding: 0;
+	top: 10px;
+	text-align: center;
+	border-top: 3px solid black;
+	background-color: #6D808E;
+	font-family: 'Alice', cursive;
+}

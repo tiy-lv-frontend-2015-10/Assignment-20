@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PETStagram</title>
+	<link rel="stylesheet" type="text/css" href="main.css"/>
+	<link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="mainContainer">
+		<div id="header">
+			<h1>Welcome to PETStagram</h1>
+			<p>Where days are made with just one picture</p>
+		</div>
+		<div id="navBar">
+			<ul>
+				<li><a href="/">HOME</a></li>
+				<li><a href="/add">ADD</a></li>
+			</ul>
+		</div>
+		<div id="imageDiv"></div>
+		<div id="descripDiv"></div>
+		<div id="addDiv">
+			<form>
+				<label>Image URL <br/><input id="url" type="text"placeholder="URL"/></label><br/>
+				<label>Title <br/><input id="title" type="text"placeholder="Title"/></label><br/>
+				<label>Description <br/><input id="d_page" placeholder="Description"/></label><br/>
+				<button type="submit" id="saveBtn">Submit</button><br/>
+			</form>
+		</div>
+		<div id="editDiv"></div>
+		<div id="footer">
+			<p>&copy; 2015 PETStagram, INC</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+	<script type="text/javascript" src="js/backbone-parse.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="x-tmpl-mustache" id="imageTemplate">
+	<ul class="petImage">
+	{{#images}}
+		<li>
+		<a href="/user/{{objectId}}"><img src="{{url}}"/></a>
+		</li>
+	{{/images}}
+	</ul>
+	</script>
+	<script type="x-tmpl-mustache" id="descripTemplate">
+	<div id="descripData">
+	{{#pet}}
+		<div id="picDiv">
+			<img src="{{url}}"/>
+		</div>
+		<div id="descriptionDiv">
+			<p class="titleDescrip">{{title}}</p><br/>
+			<p class="descrip">{{description}}</p>
+			<br/>	
+			<button id="edit"><a href="/user/{{objectId}}/edit">EDIT</a></button>
+		</div>
+	{{/pet}}
+	</div>
+	<div id="disqus_thread"></div>
+	<script>
+	/**
+	* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+	*/
+	/*
+	var disqus_config = function () {
+	this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	*/
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//petstagram.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+	</noscript>
+	</script>
+	<script type="x-tmpl-mustache" id="editTemplate">
+		{{#edit}}
+		<form>
+			<input type="hidden" name="objectId" value="{{objectId}}" id="objectId"/>
+			<label>Add New Description<br/><br/><input type="text" id="editData" placeholder="Enter New Description"/></label><br/>
+			<button type="submit" id="editSubmit">Submit</button>
+		</form>
+		{{/edit}}
+	</script>
+</body>
+</html>
