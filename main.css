@@ -32,7 +32,7 @@ h1 {
 }
 
 #imageDiv{
-	width: 75%;
+	width: 80%;
 	margin: auto;
 }
 
@@ -43,11 +43,12 @@ h1 {
 }
 
 .petImage img{
+	position: relative;
 	width: 260px;
 	height: 260px;
 	border: 1px solid black;
 	border-radius: 15px;
-	margin: 5px;
+	margin: 10px;
 }
 
 #navBar{
@@ -79,7 +80,7 @@ h1 {
 }
 
 #descripDiv{
-	width: 75%;
+	width: 80%;
 	margin: auto;
 }
 
@@ -92,23 +93,33 @@ h1 {
 	display: inline-block;
 }
 
+#picDiv{
+	position: relative;
+	display: inline-block;
+	margin: auto;
+	width: 52%;
+}
+
+#descriptionDiv{
+	position: relative;
+	display: inline-block;
+	margin: auto;
+	float: right;
+	width: 40%;
+}
+
 .titleDescrip{
 	position: relative;
 	display: inline-block;
-	float: right;
 	font-size: 30px;
-	width: 350px;
-	margin: 0px;
 }
 
 .descrip{
 	position: relative;
 	display: inline-block;
-	float: right;
 	margin: auto;
 	width: 300px;
-	bottom: 425px;
-	right: 50px;
+	height: 300px;
 }
 
 #edit{
@@ -117,8 +128,6 @@ h1 {
 	width: 150px;
 	height: 40px;
 	margin: auto;
-	left: 675px;
-	bottom: 150px;
 	border: 1px solid black;
 	border-radius: 10px;
 }

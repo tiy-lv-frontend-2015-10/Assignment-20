@@ -52,11 +52,15 @@
 	<script type="x-tmpl-mustache" id="descripTemplate">
 	<div id="descripData">
 	{{#pet}}
-		<img src="{{url}}"/>
-		<p class="titleDescrip">{{title}}</p><br/>
-		<p class="descrip">{{description}}</p>
-		<br/>	
-		<button id="edit"><a href="/user/{{objectId}}/edit">EDIT</a></button>
+		<div id="picDiv">
+			<img src="{{url}}"/>
+		</div>
+		<div id="descriptionDiv">
+			<p class="titleDescrip">{{title}}</p><br/>
+			<p class="descrip">{{description}}</p>
+			<br/>	
+			<button id="edit"><a href="/user/{{objectId}}/edit">EDIT</a></button>
+		</div>
 	{{/pet}}
 	</div>
 	<div id="disqus_thread"></div>
