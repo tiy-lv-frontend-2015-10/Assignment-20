@@ -13,9 +13,9 @@
   <div id="header">
       <h1>ANIMAL PHOTO ALBUM</h1>
       <a href="/"><input id="homeBtn" class="headerButtons" type="button" name="home" value="Home" size="25"></a>
-      <a><input class="headerButtons" type="button" name="details" value="Details" size="25"></a>
+      <a href="/details"><input class="headerButtons" type="button" name="details" value="Details" size="25"></a>
       <a href="/add"><input class="headerButtons" type="button" name="add" value="Add" size="25"></a>
-      <a><input class="headerButtons" type="button" name="edit" value="Edit" size="25"></a>
+      <a href="/edit"><input class="headerButtons" type="button" name="edit" value="Edit" size="25"></a>
   </div>
 
   <div id="picturePageDiv"></div>
@@ -47,7 +47,7 @@
   <script type="x-tmpl-mustache" id="animalPicTemplate">
     {{#mAnimalPics}}
      <div id="mPicsDiv">
-     <p class="mainPics"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></p>
+     <p class="mainPics"><a href="/detail/{{objectId}}"><img src="{{url}}"/></a></p>
      </div>
     {{/mAnimalPics}}
   </script>
@@ -63,7 +63,7 @@
 
   <script type="x-tmpl-mustache" id="animalEditTemplate">
   {{#mAnimalEdit}}
-  <p class="detailPics floatLeft"><a href="/url/{{objectId}}"><img src="{{url}}"/></a></p>
+  <p class="detailPics floatLeft"><a href="/detail/{{objectId}}"><img src="{{url}}"/></a></p>
   <p>{{title}}</p>
   <p class="descStyle">{{Description}}</p>
   <p class="clearFloat"></p>

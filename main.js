@@ -13,12 +13,12 @@ $(document).ready(function() {
     });
 
     //collection
-    var Animals = Backbone.Collection.extend({
+    var Zoo = Backbone.Collection.extend({
         model: Animals,
         _parse_class_name: "animal"
     });
 
-    var AnimalCollections = new Animals();
+    var AnimalCollections = new Zoo();
 
     AnimalCollections.fetch({
         success:function (response) {
@@ -26,8 +26,37 @@ $(document).ready(function() {
             var animalPicTemplate = $("#animalPicTemplate").text();
             var animalHTML = Mustache.render(animalPicTemplate, animalObj);
             $("#picturePageDiv").html(animalHTML);
+            console.log("success: ", response);
+        },
+        error: function (problem) {
+            console.log("error: ", problem);
         }
     });
+    
+    $("#saveButton").on('click', function(e) {
+        e.preventDefault();
+        var animalSave = new Animals();
+        animalSave.set({
+            url: $("#saveImg").val(),
+            title: $("#saveTitle").val(),
+            Description: $("#saveDescription").val()
+        })
+        $("#saveImg").val("");
+        $("#saveTitle").val("");
+        $("#saveDescription").val("");
+        animalSave.save(null, {
+            success: function(response) {
+                console.log("success", response);
+            },
+            error: function(problem) {
+                console.log("error ", problem);
+            }
+            });
+            
+        location.href="/";
+            
+    });
+
 
     //click to add
 
@@ -47,21 +76,21 @@ $(document).ready(function() {
     });
 
     var router = new Router();
+    
+    //2nd page
     router.on('route:detail', function(objectId) {
         var animalObj2 = {'mAnimalDescription': AnimalCollections.get(objectId).toJSON()};
         var animalDescriptionTemplate = $("#animalDescriptionTemplate").text();
         var animal2HTML = Mustache.render(animalDescriptionTemplate, animalObj2);
         $("#detailPageDiv").html(animal2HTML);
         $("#picturePageDiv").hide();
-        $("#detailPageDiv").toggleClass();
+        $("#addPageDiv").hide();
+        //$("#detailPageDiv").toggleClass();
         $("#detailPageDiv").show();
     });
 
+    //home page
     router.on('route:index', function(objectId) {
-        var animalObj3 = {'mAnimalPics': AnimalCollections.get(objectId).toJSON()};
-        var animalDescriptionTemplate = $("#animalDescriptionTemplate").text();
-        var animal3HTML = Mustache.render(animalDescriptionTemplate, animalObj3);
-        $("#picturePageDiv").html(animal3HTML);
         $("#picturePageDiv").show();
         $("#detailPageDiv").hide();
         $("#addPageDiv").hide();
@@ -77,15 +106,7 @@ $(document).ready(function() {
     });
 
 //save added photo album info here
-    $("#saveButton").on('click', function(e) {
-        e.preventDefault();
-        var animalSave = new Animals();
-        animalSave.set({
-            url: $("#saveImg").val(),
-            title: $("#saveTitle").val(),
-            Description: $("#saveDescription").val()
-        })
-    });
+    
 
 
     router.on('route:edit', function(objectId) {
