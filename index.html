@@ -6,6 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+<div id="header">
+<h1>MyMeme!</h1>
+</div>
 <div id="nav">
 	<ul>
 		<li><a href="/">Home</a></li>
@@ -56,7 +59,7 @@
 			<div><img class="imagesLarge"src="{{url}}"/></div>
 
 			<div id="descriptionDiv">
-			<img id="profileImg"src="/assets/default2.png"/><span id="user">{{user}}</span>
+			<img src="/assets/default2.png" class="profileImg"/><span id="user">{{user}}</span>
 			<hr id="line" />
 			<h3 id="title">{{title}}</h3>
 			<p>{{description}}</p></div>
@@ -77,11 +80,11 @@
 
 			<input type="hidden" id="objectId"  value="{{objectId}}"/>
 
-			<p "userVal">{{user}}</p>
+			<img src="/assets/default2.png" class="profileImg"/><span id="userVal">{{user}}</span>
 
-			<span>Title: </span><input id="editTitle" value="{{title}}"/>
+			<p>Title: </p><input id="editTitle" value="{{title}}"/>
 
-			<span id="deSpan">Description: </span><textarea id="editDescription">{{description}}</textarea>
+			<p id="deSpan">Description: </p><textarea id="editDescription">{{description}}</textarea>
 
 			
 

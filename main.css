@@ -8,6 +8,10 @@
 body {
 	height:500px;
 }
+#header {
+	width:730px;
+	margin:auto;
+}
 
 #memesDiv {
 	width:750px;
@@ -53,7 +57,11 @@ body {
 	display: inline;
 	position: relative;
 	top:10px;
+	left:10px;	
+	padding-right: 90px;
 }
+
+
 a {
 	color:black;
 	text-decoration: none;
@@ -66,6 +74,11 @@ a:visited {
 	margin:10px;
 	width:225px;
 	position: relative;
+}
+
+.imgMeme:hover {
+	opacity: .9;
+	box-shadow:3px 3px 2px #888888;
 }
 
 .imagesLarge {
@@ -103,7 +116,7 @@ li {
 	padding:0;
 }
 
-#profileImg {
+.profileImg {
 	border-radius:20px;
 }
 
@@ -157,6 +170,13 @@ li {
 	width:1000px;
 	margin:auto;
 }
+
+#userVal {
+	position: absolute;
+	top:10px;
+	left:45px;
+	color:#155889;
+}
 #deSpan {
 	display: block;
 }
@@ -187,7 +207,11 @@ li {
 }
 
 #changeData {
-	float: right;
+	position: relative;
+	float: left;
+	width:500px;
+	left:20px;
+	top:15px;
 }
 
 #submitBtn {
