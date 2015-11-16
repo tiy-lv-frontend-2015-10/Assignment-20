@@ -85,7 +85,7 @@ h1 {
 	display: inline-block;
 	width: 650px;
 	height: 480px;
-	padding-right: 60px;
+	padding-right: 50px;
 
 }
 #big-pic img {
@@ -100,6 +100,7 @@ h1 {
 #stats {
 	display: inline-block;
 	vertical-align: top;
+	margin-left: 30px;
 	margin-top: -30px;
 }
 
@@ -110,6 +111,7 @@ h1 {
 }
 #description {
 	width: 400px;
+	padding-top: 40px;
 }
 
 #edit-button {

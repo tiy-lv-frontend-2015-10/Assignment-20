@@ -51,20 +51,19 @@ var PhotoCollection = Backbone.Collection.extend({
 });
 
 var photos = new PhotoCollection();
-
 photos.fetch({
-      success: function(resp) {
+			success: function(resp) {
 			var photosData = {"photo": resp.toJSON()};
 			console.log(photosData);
 			//Mustache render to template index;
-      var photosTemplate = $('#photos').text();
-      var photosHTML = Mustache.render(photosTemplate, photosData);
-      $('#photo-grid').html(photosHTML);
+			var photosTemplate = $('#photos').text();
+			var photosHTML = Mustache.render(photosTemplate, photosData);
+			$('#photo-grid').html(photosHTML);
 
-      }, error: function (err) {
-        console.log("error: ", err);
-      }
-    });
+			}, error: function (err) {
+				console.log("error: ", err);
+			}
+		});
 
 var Router = Backbone.Router.extend({
       initialize: function () {
@@ -86,6 +85,7 @@ router.on('route:detail', function(objectId) {
 		var detailHTML = Mustache.render(detailTemplate, detailData);
 		$('#single-detail').html(detailHTML);
 		$('#photo-grid').hide();
+		$('#add-button').hide();
 		$('#single-detail').show();
 	});
 
@@ -95,6 +95,7 @@ router.on('route:edit', function(objectId){
 		var editTemplate = $('#edit').text();
 		var editHTML = Mustache.render(editTemplate, editData);
 		$('#single-detail').html(editHTML);
+		$('#add-button').hide();
 			$('#single-detail').on('click', 'a', function(e){
 				e.preventDefault();
 				var newName = $('#edit-name').val();
@@ -108,9 +109,9 @@ router.on('route:edit', function(objectId){
 				router.navigate(href, {trigger:true});
 			});
 	});
-
-	router.on('route:add', function(){
 			var photo = new Photo();
+	router.on('route:add', function(){
+
 			var addData = {"add":{
 					"url": "",
 					"name": "",
@@ -155,6 +156,8 @@ router.on('route:edit', function(objectId){
 
 
 router.on('route:index', function () {
+
+
 		$('#photo-grid').show();
 		$('#add-button').show();
 		$('#single-detail').hide();
