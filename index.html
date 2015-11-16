@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assingment 20</title>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+
+</head>
+<body>
+  <div class="header">
+  <div id="title">
+   <h1>Nickstagram</h1>
+  </div>
+  <div id="home">
+    <a href="/">Home</a>
+  </div>
+  <div id="add">
+    <a href="/add">Add</a>
+  </div>
+</div>
+  <div id="pictureContainer"></div>
+  <div id="detailContainer"></div>
+  <div id="editContainer"></div>
+
+  <div class="addPage">
+    <form id="addForm">
+      <input id="addImage" value="" type='text' placeholder="Image Url">
+      </br><input id="addTitle" value="" type='text' placeholder="Title">
+      </br><textarea id="addDetail" value="" type='textarea' placeholder="Detail"></textarea>
+      <button id="addButton" type="submit">Add</button>
+    </form>
+  </div>
+
+  <script type="x-tmpl-mustache" id="urlTemplate">
+    {{#data}}
+      <a href="/image/{{objectId}}"><img src="{{url}}"></a>
+    {{/data}}
+  </script>
+
+  <script type="x-tmpl-mustache" id="detailTemplate">
+    <div class="details">
+    {{#data}}
+      <img src="{{url}}">
+      <div id="description">
+        <p id="user"> {{user}} </p>
+        <p>{{title}} -</p>
+        <p id="detail">{{detail}}</p>
+    <div id="edit">
+      <a href="/image/{{objectId}}/edit">Edit</a>
+    </div>
+      </div>
+    {{/data}}
+    </div>
+  </script>
+
+ <script type="x-tmpl-mustache" id="editTemplate">
+  <div class="editPage">
+    <form id="editForm">
+      {{#data}}
+      <img src="{{url}}">
+      </br><p> Title: </p><input id="editTitle" value="{{title}}" type='text' placeholder="Title">
+      </br><p> Detail: </p><textarea id="editDetail" value="{{detail}}" type='textarea' placeholder="{{detail}}"></textarea>
+      </br><button id="editButton" type="submit">Edit</button>
+      {{/data}}
+    </form>
+  </div>
+</script>
+
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>
+  <script type="text/javascript" src="backbone-parse.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
