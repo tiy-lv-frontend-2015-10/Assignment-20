@@ -136,7 +136,7 @@ li {
 
 #formDiv {
 	display: none;
-	width:730px;
+	width:970px;
 	margin:auto;
 }
 #description{
@@ -155,6 +155,8 @@ li {
 	width:315px;
 	float: right;
 	position: relative;
+	
+	left:20px;
 	top:30px;
 	
 }

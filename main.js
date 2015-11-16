@@ -89,7 +89,7 @@ $(document).ready(function(){
 		$("#formDiv").show();
 		$("#addForm").show();
 		$("#editDiv").hide();
-		$("#nav").css("width","730px");
+		$("#nav").css("width","1000px");
 		$("#editSubmitBtn").hide();
 	});
 
