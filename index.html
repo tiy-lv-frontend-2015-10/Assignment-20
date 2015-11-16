@@ -22,6 +22,7 @@
 </div>
   <div id="pictureContainer"></div>
   <div id="detailContainer"></div>
+  <div id="editContainer"></div>
 
   <div class="addPage">
     <form id="addForm">
@@ -32,22 +33,10 @@
     </form>
   </div>
 
-  <div class="editPage">
-    <form id="editForm">
-      </br><input id="editTitle" value="" type='text' placeholder="Title">
-      </br><textarea id="editDetail" value="" type='textarea' placeholder="Detail"></textarea>
-      <button id="editButton" type="submit">Edit</button>
-    </form>
-  </div>
-
-
-
-
   <script type="x-tmpl-mustache" id="urlTemplate">
-  {{#data}}
-    <a href="/image/{{objectId}}"><img src="{{url}}"></a>
-
-  {{/data}}
+    {{#data}}
+      <a href="/image/{{objectId}}"><img src="{{url}}"></a>
+    {{/data}}
   </script>
 
   <script type="x-tmpl-mustache" id="detailTemplate">
@@ -59,16 +48,25 @@
         <p>{{title}} -</p>
         <p>{{detail}}</p>
     <div id="edit">
-      <a href="/edit">Edit</a>
+      <a href="/image/{{objectId}}/edit">Edit</a>
     </div>
       </div>
     {{/data}}
     </div>
   </script>
 
-  <script type="x-tmpl-mustache" id="editTemplate">
-
-  </script>
+ <script type="x-tmpl-mustache" id="editTemplate">
+  <div class="editPage">
+    <form id="editForm">
+      {{#data}}
+      <img src="{{url}}">
+      </br><input id="editTitle" value="{{title}}" type='text' placeholder="Title">
+      </br><input id="editDetail" value="{{detail}}" type='textarea' placeholder="Detail">
+      <button id="editButton" type="submit">Edit</button>
+      {{/data}}
+    </form>
+  </div>
+</script>
 
 
 

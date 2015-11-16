@@ -59,7 +59,7 @@ var Router = Backbone.Router.extend({
     routes: {
       "image/:objectId": "image",
       "add": "add",
-      "edit": "edit",
+      "image/:objectId/edit": "edit",
       "": "index"
   }
 });
@@ -83,6 +83,43 @@ router.on("route:image", function(objectId) {
   });
 });
 
+
+router.on("route:edit", function(objectId) {
+  var edit = new Container({objectId: objectId});
+  edit.fetch({
+    success: function(resp){
+      var data3obj = {"data": resp.toJSON()};
+      var editTemplate = $("#editTemplate").text();
+      var editHTML = Mustache.render(editTemplate, data3obj);
+      $("#editContainer").html(editHTML);
+      $("#pictureContainer").hide();
+      $("#detailContainer").hide();
+      $("#editContainer").show();
+      $("#editButton").on('click', function(){
+      console.log("success", resp);
+    edit.set({
+      title: $("#editTitle").val(),
+      detail: $("#editDetail").val()
+    })
+    $("#editTitle").val("");
+    $("#editDetail").val("");
+    edit.save(null, {
+      success: function(resp) {
+        console.log("success", resp);
+      },
+      error: function(err) {
+        console.log("error", err)
+      }
+    })
+    router.navigate("/");
+    });
+  },
+    error: function(err) {
+      console.log("error", err);
+    }
+  });
+});
+
 router.on('route:index', function(){
   $("#detailContainer").hide();
   $(".addPage").hide();
@@ -95,12 +132,12 @@ router.on("route:add", function() {
 });
 
 router.on("route:edit", function() {
-  $("#detailContainer").hide();
-  $(".editPage").show();
+  $("#editContainer").show();
 });
 
 $(".addPage").hide();
 $(".editPage").hide();
+$("#editContainer").hide();
 
 $('body').on('click','a', function(e){
   e.preventDefault();
@@ -108,27 +145,3 @@ $('body').on('click','a', function(e){
   href = href.substr(1);
   router.navigate(href, {trigger:true});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
