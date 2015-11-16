@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gifstagram</title>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="container">
+    <h1>Gifstagram</h1>
+      <div id="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/add">Add</a></li>
+      </ul>
+      </div>
+      <div id="home"></div>
+      <div id="details"></div>
+      <div id="add" class="hidden">
+        <form id="addForm">
+          <label>Add Url<br><input class="url" type="text"  id="url" value=""></lable><br>
+          <lanel>Add Description<br><input class="decription" type="text" id="decription" value=""><br>
+          <input type="button" id="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+
+
+<script type = "x-tmpl-mustache" id = "homeTemplate">
+<ul class ="gifList">
+{{#gifs}}
+<li><a href="/details/{{objectId}}"><img src="{{url}}"></a></li>
+{{/gifs}}
+</ul>
+</script>
+
+<script type = "x-tmpl-mustache" id = "detailsTemplate">
+<div>
+{{#details}}
+<img class ="large"src="{{url}}">
+<p><strong>{{Description}}.</strong></br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iusto similique, dicta architecto nihil, sunt debitis, ad nulla ipsa dolore libero consequuntur reiciendis animi et reprehenderit fugit vitae tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo molestiae, quae veritatis. Harum itaque, magni sequi obcaecati, voluptatum similique labore possimus praesentium autem porro veniam ullam et aliquam non, eaque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iusto similique, dicta architecto nihil, sunt debitis, ad nulla ipsa dolore libero consequuntur reiciendis animi et reprehenderit fugit vitae tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo molestiae, quae veritatis. Harum itaque, magni sequi obcaecati, voluptatum similique labore possimus praesentium autem porro veniam ullam et aliquam non, eaque.</p>
+        <form id="editForm">
+          <input type="hidden"  id="objectId" value="{{objectId}}"><br>
+          <label>Edit URL<br><input class="url" type="text"  id="url" value=""></label><br>
+          <label>Edit Description<br><input class="decription" type="text" id="decription" value=""></br>
+          <input type="button" id="submit" value="Submit">
+        </form>
+
+{{/details}}
+</div>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gifstagram.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</script>
+
+
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="js/backbone-parse.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
