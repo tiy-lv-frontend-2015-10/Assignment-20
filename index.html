@@ -23,7 +23,7 @@
   <div id="detailPageDiv"></div>
 
   <div id="addPageDiv" class="hidden">
-      <form>
+      <form id="addForm">
           Copy URL Link Here:
           <input id="saveImg" type="text" value=""><br>
           Title:
@@ -54,11 +54,21 @@
 
   <script type="x-tmpl-mustache" id="animalDescriptionTemplate">
     {{#mAnimalDescription}}
-    <p class="detailPics floatLeft"><a href="/Description/{{objectId}}"><img src="{{url}}"/></a></p>
+    <p class="detailPics floatLeft breathRight"><a href="/Description/{{objectId}}"><img src="{{url}}"/></a></p>
     <p class="descStyle">{{title}}</p>
     <p class="descStyle">{{Description}}</p>
     <p class="clearFloat"></p>
-    <p><a href="/edit"><input class="headerButtons" type="button" name="edit" value="Edit" size="25"></a></p>
+    <p><a href="/edit"><input id="editButton" class="headerButtons" type="button" name="edit" value="Edit" size="25"></a></p>
+      <div id="editForm">
+           <form>
+                Copy URL Link Here:
+                <input id="editURL" type="text" value=""><br>
+                Title:
+                <input id="editTitle" type="text"  name="Title" value=""><br>
+                Description:
+          <input id="editDescription" type="text" value="">
+      </form>
+      </div>
     {{/mAnimalDescription}}
   </script>
 

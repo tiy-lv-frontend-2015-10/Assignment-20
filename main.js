@@ -51,11 +51,31 @@ $(document).ready(function() {
             error: function(problem) {
                 console.log("error ", problem);
             }
-            });
-            
+        });
         location.href="/";
-            
     });
+    
+    /*$("#editButton").on('click', function(e) {
+        e.preventDefault();
+        var animalEdit = new Animals();
+        animalEdit.set({
+            url: $("#").val(),
+            title: $("#").val(),
+            Description: $("#").val()
+        })
+        $("#").val("");
+        $("#").val("");
+        $("#").val("");
+        animalEdit.save(null, {
+            success: function(response) {
+                console.log("success", response);
+            },
+            error: function(problem) {
+                console.log("error ", problem);
+            }
+        });
+        location.href="/";
+    });*/
 
 
     //click to add

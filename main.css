@@ -55,6 +55,10 @@ h1 {
     padding: 0;
 }
 
+.pushDescDown {
+    padding-bottom: 8em;
+}
+
 /*2nd Page --- Detail View*/
 .hidden {
     display: none;
@@ -71,6 +75,10 @@ h1 {
     height: 275px;
 }
 
+.breathRight {
+    padding-right: 8em;
+}
+
 .floatLeft {
     float: left;
 }
@@ -79,4 +87,15 @@ h1 {
     margin: 0 0 0 10em;
     padding: 0 0 0 10em;
     color: white;
+}
+
+/*form to add*/
+#addPageDiv {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#addForm {
+    padding: 1em;
 }
