@@ -1,10 +1,10 @@
  var Image = Backbone.Model.extend({
     initialize: function() {
       },
-      defaults:{
+      defaults: {
         URL: null,
         Description: null,
-        Name:null
+        Name: null
       },
       _parse_class_name:"Images"
     });
@@ -64,6 +64,23 @@ var userHTML = Mustache.render(userinfoTemplate ,info);
 $("#jedi").html(userHTML);
 	$("#sith").hide();
 	$("#jedi").show();
+	
+	$("#cSubmit").on("click", function(){
+		var info = new Image();
+		info.set({
+			Description: $("cdesc").val(),
+			URL: $("curl").val(),
+			Name: $("cname").val()
+	});
+		$("#cdesc").val("");
+		info.save(null,{
+			success: function(resp) {
+				console.log(resp);
+			}
+			
+		});
+		router.navigate("/");
+	});
 	});
 
 		router.on('route:index' , function(){
@@ -78,8 +95,9 @@ $("#jedi").html(userHTML);
 	$("#jedi").hide();
 	$("#add").show();	
 	});
-	
-	
+
+
+
 
 
   $("body").on('click', 'a', function(e){

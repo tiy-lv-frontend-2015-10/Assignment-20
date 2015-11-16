@@ -8,12 +8,12 @@
 <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <body>
 
-	<h1 id="header">Stargram</h1>
+<h1 id="header">Stargram</h1>
 	
   <div id="nav">
     <ul>
-      <li><a href = "/">Home</a></li>
-      <li><a href = "/add">Add an Image</a></li>
+<li><a href = "/">Home</a></li>
+<li><a href = "/add">Add an Image</a></li>
     </ul>
   </div>
 
@@ -33,7 +33,6 @@
   <input type="submit" value="Submit" id="submit">
 </form>	
 </div>
-	
 
 
 <!--images-->
@@ -51,10 +50,18 @@
 <ul>
 <li><a href="/URL/{{objectId}}"><img src="{{URL}}"/></a></li>
 <li id="username">{{Name}}</li>
-<br>{{Description}}<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, iste deserunt odio assumenda culpa quisquam praesentium dolor id vel. Optio sunt incidunt, non adipisci suscipit maiores omnis quos enim.
-{{/deathstar}}
+<li id="description"><br>{{Description}}<br>
 </ul>
+<form>
+  url: <input type="text" value="{{objectId}}" id="curl"><br>
+  Description: 
+   <input type="text"  value="{{Description}}"  id="cdesc"><br>
+   User Name <input type="text" value="{{Name}}" id="cname"><br>
+  <input type="submit" value="Submit" id="cSubmit">
+</form>		
+{{/deathstar}}
 </script>
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
