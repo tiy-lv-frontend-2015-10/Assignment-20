@@ -1,0 +1,194 @@
+body {
+	background-image: url('assets/jazz-club-smaller.jpg');
+	/*background-repeat: no-repeat;*/
+	background-size: contain;
+	height: 1500px;
+	color: #F5F6F6;
+	font-family: Arial, sans-serif;
+}
+
+#top-part {
+	position: relative;
+}
+
+h1 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2.5rem;
+	color: #40E0D0;
+}
+
+#container {
+	width: 85%;
+	margin: auto;
+}
+
+#add-button {
+	position: absolute;
+	top: 20px;
+	right: 180px;
+	width: 150px;
+	height: 40px;
+	border-radius: 5px;
+	background: #1E90FF;
+}
+
+#add-button:hover {
+	background: #40E0D0;
+}
+
+#add-button a {
+	color: white;
+	font-size: 1.1rem;
+	text-decoration: none;
+	}
+
+
+
+.pic {
+	display: inline-block;
+	vertical-align: top;
+	border: 5px solid white;
+	border-radius: 6px;
+	width: 240px;
+	height: 240px;
+	margin-bottom: 20px;
+	z-index: 20;
+
+}
+
+.pic p {
+	margin: 0;
+	margin-left: -6px;
+	padding: 0;
+	font-size: 0.8rem;
+}
+
+.pic img {
+	width: 240px;
+	height: 240px;
+}
+
+.pic img:hover {
+	border-style: ridge;
+	border-color: #40E0D0;
+	border-width: 9px;
+	opacity: 0.9;
+}
+.pic img:checked {
+	border-style: ridge;
+	border-color: yellow;
+	border-width: 9px;
+	opacity: 0.9;
+}
+
+#big-pic {
+	display: inline-block;
+	width: 650px;
+	height: 480px;
+	padding-right: 50px;
+
+}
+#big-pic img {
+	width: 700px;
+	height: 500px;
+	border-radius: 10px;
+}
+#user {
+	display: inline-block;
+}
+
+#stats {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 30px;
+	margin-top: -30px;
+}
+
+#stats h3 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 1.4rem;
+	color: #40E0D0;
+}
+#description {
+	width: 400px;
+	padding-top: 40px;
+}
+
+#edit-button {
+	display: inline-block;
+	float:right;
+	width: 150px;
+	height: 40px;
+	border-radius: 5px;
+	background: #1E90FF;
+}
+
+#edit-button:hover {
+	background: #40E0D0;
+}
+
+#edit-button a {
+	color: white;
+	font-size: 1.1rem;
+	text-decoration: none;
+	}
+#edit-name {
+	font-size: 0.8rem;
+	width: 200px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+#edit-description {
+	font-size: 0.8rem;
+	width: 400px;
+	height: 110px;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+
+#save-changes {
+	width: 250px;
+	height: 40px;
+	border-radius: 5px;
+	background: #1E90FF;
+}
+
+#save-changes:hover {
+	background: #40E0D0;
+}
+
+#save-changes a {
+	color: white;
+	font-size: 1.1rem;
+	text-decoration: none;
+}
+
+#add-url {
+	font-size: 0.8rem;
+	width: 500px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+#add-name {
+	font-size: 0.8rem;
+	width: 500px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+#add-description {
+	font-size: 0.8rem;
+	width: 500px;
+	height: 110px;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+#add-username {
+	font-size: 0.8rem;
+	width: 500px;
+	height: 30px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
