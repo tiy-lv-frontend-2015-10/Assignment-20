@@ -76,7 +76,7 @@ PROFILE
     background: red;
     position: relative;
     top: 110px;
-  	left: 50px;
+  	left: 110px;
     margin: 0px;
     
 }
@@ -85,7 +85,7 @@ PROFILE
 	width: 284px;
     position: relative;
     top: 108px;
-    left: 60px;
+    left: 110px;
     text-align: center;
 
 }
@@ -201,6 +201,7 @@ UPLOAD PAGE
 	border: none;
     display: block;
     padding: 10px;
+    bottom: 5px;
     position: relative;
     background: #FF8A14;
     text-decoration: none;

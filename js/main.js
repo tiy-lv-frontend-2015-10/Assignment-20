@@ -26,7 +26,7 @@ $(document).ready(function (){
 		var imageHTML = Mustache.render(imageTemplate, imgObj);
 			$("#gallery").html(imageHTML);
 			$("#suma").hide();
-			$()
+
 		
 			
 		},
@@ -34,26 +34,7 @@ $(document).ready(function (){
 			console.log(err);
 		}
 	});
-		 $("#submit").on("click", function(){
-			var picture = new Picture();
-			picture.set({
-				url: $("#url").val(),
-				description: $("#description").val(),
-				name: $("#name").val()
-			});
-				$("#url").val("");
-				$("#description").val("");
-				$("#name").val("");
-			picture.save(null, {
-				success: function(resp){
-				},error: function(err){
-					console.log("error", err);
-				}
 
-			});
-		
-			router.href("/");
-		});
 //collection
 	var Router = Backbone.Router.extend ({
 		initialize: function(){
@@ -61,11 +42,11 @@ $(document).ready(function (){
 		Backbone.history.start({pushState:true});
 			},
 			routes: {
-				"":"index",
+		
 				"url/:objectId": "url",
 				"add":"add",
-				
-				/*"add":"add",*/
+				"":"index",
+			
 			}	 
 	});
 //individual
@@ -83,16 +64,31 @@ $(document).ready(function (){
 				$("#suma").hide();
 				$("#desc").show();
 				$("#parent").hide();
+			$("#submit").on("click", function(){
+			var picture = new Picture();
+			picture.set({
+				url: $("#url").val(),
+				description: $("#description").val(),
+				name: $("#name").val()
+			})
+				$("#url").val("");
+				$("#description").val("");
+				$("#name").val("");
+			picture.save(null, {
+				success: function(resp){
+				},error: function(err){
+					console.log("error", err);
+				}
+			});
+		
+			location.href="/";
+		});
 		}
 
 		})	
 	});
 
-		router.on('route:index', function(){
-			$("#desc").hide();
-			$("#suma").hide();
-			$("#gallery").show();
-		});
+
 		router.on('route:add', function(){
 			$("#gallery").hide();
 			$("#desc").hide();
@@ -100,8 +96,12 @@ $(document).ready(function (){
 			$("#parent").hide();
 			$("#btn").toggleClass();
 
-		})
-
+		});
+		router.on('route:index', function(){
+			$("#desc").hide();
+			$("#suma").hide();
+			$("#gallery").show();
+		});
 
 	
 
