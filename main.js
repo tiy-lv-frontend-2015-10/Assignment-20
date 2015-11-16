@@ -96,7 +96,7 @@ $(document).ready(function(){
 		$("#formDiv").hide();
 		$("#addForm").hide();
 		$("#editDiv").hide();
-		
+
 
 	});
 
@@ -115,7 +115,6 @@ $(document).ready(function(){
 		$("#editSubmitBtn").show();
 		$("#memesDiv").hide();
 		$("#oneMemeDiv").hide();
-		$("#placehold").hide();
 		$("#editDiv").show();
 		$("#nav").css("width","1000px");
 	});

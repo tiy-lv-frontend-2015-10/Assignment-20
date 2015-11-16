@@ -155,6 +155,9 @@ li {
 	height:30px;
 	width:100px;
 	border:1px solid #F7F7F7;
+	position: absolute;
+	right:160px;
+	top:400px;
 }
 
 #editForm input {
@@ -175,6 +178,4 @@ li {
 	display: block;
 }
 
-#objectId {
-	display: none;
-}
+
