@@ -61,31 +61,32 @@ $(document).ready(function(){
 				console.log("error ", err);
 		}
 	})
-		router.navigate("/");
+		location.href="/"
 	});
 
-	$("#editSubmit").on('click',function(e){
-	e.preventDefault();
-	var animal = new Pet();
-	animal.set({
-		objectId: $("#objectId").val(),
-		description: $("#editData").val()
-	})
-	$("#objectId").val(""),
-	$("#editData").val("")
-		animal.save(null,{
-			success:function(resp){
-				PetsCollection.fetch({
-					success: function(resp){
-					}, error: function(err){	
-					}
-				})
-			}, error: function(err){
-				console.log("error ", err);
-		}
-	})
-		router.navigate("/");
-	});
+	// $("#editSubmit").on('click',function(e){
+	// e.preventDefault();
+	// var animal = new Pet();
+	// animal.set({
+	// 	objectId: $("#objectId").val(),
+	// 	description: $("#editData").val(),
+	// 	idAttributes: "objectId"
+	// })
+	// $("#objectId").val(""),
+	// $("#editData").val("")
+	// 	animal.save(null,{
+	// 		success:function(resp){
+	// 			PetsCollection.fetch({
+	// 				success: function(resp){
+	// 				}, error: function(err){	
+	// 				}
+	// 			})
+	// 		}, error: function(err){
+	// 			console.log("error ", err);
+	// 	}
+	// })
+	// 	location.href="/"
+	// });
 
 	var Router = Backbone.Router.extend({
 		initialize:function(){
@@ -134,11 +135,32 @@ $(document).ready(function(){
 				$("#editDiv").html(editHTML);
 				$("#descripDiv").hide();
 				$("#editDiv").show();
-				console.log('edit page');
+				$("#editSubmit").on('click',function(){
+				var animal = new Pet();
+				animal.set({
+					objectId: $("#objectId").val(),
+					description: $("#editData").val()
+				})
+				$("#objectId").val(""),
+				$("#editData").val("")
+					animal.save(null,{
+						success:function(resp){
+							PetsCollection.fetch({
+								success: function(resp){
+								}, error: function(err){	
+								}
+							})
+						}, error: function(err){
+							console.log("error ", err);
+					}
+				})
+					router.navigate("/");
+				})
+			console.log('edit page');
 			}, error: function(err){
 				console.log("error ", err);
 			}
-		})
+			})
 	});
 	router.on('route:index', function(){
 		$("#imageDiv").show();

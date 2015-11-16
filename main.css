@@ -10,21 +10,12 @@ html{
 
 #header{
 	width: 100%;
-	height: 70px;
+	height: 10%;
 	margin: 0;
 	top: 10px;
 	text-align: center;
 	border-bottom: 3px solid black;
 	background-color: #6D808E;
-}
-
-#header img{
-	width: 90px;
-	height: 55px;
-	position: relative;
-	float: left;
-	margin-left: 20px;
-	margin-top: 8px;
 }
 
 h1 {
@@ -52,8 +43,8 @@ h1 {
 }
 
 .petImage img{
-	width: 280px;
-	height: 280px;
+	width: 28%;
+	height: 28%;
 	border: 1px solid black;
 	border-radius: 15px;
 	margin: 5px;
@@ -194,6 +185,34 @@ h1 {
 
 #editDiv{
 	display: none;
+	position: relative;
+	margin:auto;
+	width: 60%;
+	height: 500px;
+	top:10px;
+}
+
+#editData{
+	position: relative;
+	width: 40%;
+	height: 20px;
+	padding-left: 10px;
+	padding-bottom: 80px;
+	border: 2px solid black;
+	border-radius: 10px;
+	outline: none;
+}
+
+#editSubmit {
+	position: relative;
+	margin: 10px;
+	width: 12%;
+	height: 6%;
+	font-family: 'Alice', cursive;
+	background: black;
+	color: white;
+	border: 1px solid gray;
+	border-radius: 5px;
 }
 
 #footer {
