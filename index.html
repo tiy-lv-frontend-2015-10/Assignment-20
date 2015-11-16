@@ -46,7 +46,7 @@
       <div id="description">
         <p id="user"> {{user}} </p>
         <p>{{title}} -</p>
-        <p>{{detail}}</p>
+        <p id="detail">{{detail}}</p>
     <div id="edit">
       <a href="/image/{{objectId}}/edit">Edit</a>
     </div>
@@ -60,9 +60,9 @@
     <form id="editForm">
       {{#data}}
       <img src="{{url}}">
-      </br><input id="editTitle" value="{{title}}" type='text' placeholder="Title">
-      </br><input id="editDetail" value="{{detail}}" type='textarea' placeholder="Detail">
-      <button id="editButton" type="submit">Edit</button>
+      </br><p> Title: </p><input id="editTitle" value="{{title}}" type='text' placeholder="Title">
+      </br><p> Detail: </p><textarea id="editDetail" value="{{detail}}" type='textarea' placeholder="{{detail}}"></textarea>
+      </br><button id="editButton" type="submit">Edit</button>
       {{/data}}
     </form>
   </div>

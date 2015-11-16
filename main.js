@@ -120,10 +120,18 @@ router.on("route:edit", function(objectId) {
   });
 });
 
+$("#add").on('click', function() {
+  $("#detailContainer").hide();
+  $("#pictureContainer").hide();
+  $("#editContainer").hide();
+  $(".addPage").show();
+});
+
 router.on('route:index', function(){
   $("#detailContainer").hide();
   $(".addPage").hide();
   $("#pictureContainer").show();
+  $("#editContainer").hide();
 });
 
 router.on("route:add", function() {
@@ -135,9 +143,13 @@ router.on("route:edit", function() {
   $("#editContainer").show();
 });
 
+router.on("route:image", function() {
+  $("#editContainer").hide();
+})
+
+$("#editContainer").hide();
 $(".addPage").hide();
 $(".editPage").hide();
-$("#editContainer").hide();
 
 $('body').on('click','a', function(e){
   e.preventDefault();
