@@ -8,7 +8,7 @@
 <body>
 
     <div id="header">
-        <div id="instagram-logo"><img src="assets/Instagram_Icon_Large.png"><p>Fun Places</p></div>
+        <div id="instagram-logo"><p>Fun Places</p><img src="assets/Instagram_Icon_Large.png"></div>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -20,20 +20,21 @@
 
 
     <div id="photos"></div>
-    <div id ="photosDetail">
+    <div id="photosDetail"></div>  
     <script type = "x-tmpl-mustache" id="photosTemplate">
         {{#instagram}}
             <a href="/details/{{objectId}}"><img class="home-photo" src="{{url}}" /></a>
         {{/instagram}}
     </script>
 
-
-
     <div id="photosDetailpage"></div>
-    <script type = "x-tmpl-mustache" id="DescriptionTemplate">
-    
-            <img class="itemDescription" src="{{url}}"></img>
-            <p>{{description}} <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt mollitia ut laudantium amet similique dicta, ullam at laborum, deleniti, nobis necessitatibus blanditiis magnam. Tenetur officiis quam, consectetur quo, labore molestiae.</p>
+    <script type = "x-tmpl-mustache" id="DescriptionTemplate">  
+            <img src="{{url}}"></img>
+            <p>
+                <div class="photo-description">{{description}}</div>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt mollitia ut laudantium amet similique dicta, ullam at laborum, deleniti, nobis necessitatibus blanditiis magnam. Tenetur officiis quam, consectetur quo, labore molestiae.
+                </div>
+            </p>
 
 
    <div id="disqus_thread"></div>
@@ -56,6 +57,12 @@ s.src = '//instafun.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
+
+
+
+
+
+
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>     
     </script>

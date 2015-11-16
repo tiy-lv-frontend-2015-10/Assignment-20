@@ -45,6 +45,9 @@ var Router = Backbone.Router.extend({
                 var template = $("#photosTemplate").text();
                 var data = Mustache.render(template, dataBase);
                 $("#photos").html(data);
+
+                // remove any remaining details if we go home
+                $("#photosDetailpage").html("");
             },
             error: function(err){
                 console.log("error:",err);
