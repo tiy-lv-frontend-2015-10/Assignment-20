@@ -10,11 +10,13 @@
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/add">Add</a></li>
-		<li id="edit">Edit</li>
+		<li id="edit"><a href="/edit">Edit<a></li>
+
 
 	</ul>
+	<button id="editSubmitBtn">Edit</button>
 </div>
-<button id="editSubmitBtn">Edit</button>
+
 <div id="memesDiv"></div>
 <div id="oneMemeDiv"></div>
 <div id="editDiv"></div>
@@ -28,8 +30,8 @@
 		<span>Title: </span><input id="title"/>
 		
 		<span>Url: </span><input id="url"/>
-		<span>Description: </span><input id="description"/>
-		<button id="submitBtn"></button>
+		<span>Description: </span><textarea id="description"></textarea>
+		<button id="submitBtn">Add</button>
 
 	</form>
 </div>
@@ -79,11 +81,11 @@
 
 			<span>Title: </span><input id="editTitle" value="{{title}}"/>
 
-			<span>Description: </span><input id="editDescription" value="{{description}}"/>
+			<span id="deSpan">Description: </span><textarea id="editDescription">{{description}}</textarea>
 
-			<span>URL:</span>
+			
 
-			<p id="urlVal">{{url}}</p>
+			<p id="urlVal" class="hidden">{{url}}</p>
 
 			
 
@@ -96,6 +98,7 @@
 
 </div>
 </script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

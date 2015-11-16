@@ -5,6 +5,9 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
+body {
+	height:500px;
+}
 
 #memesDiv {
 	width:750px;
@@ -44,6 +47,7 @@
 	margin:auto;
 	background:#F7F7F7;
 	text-align: center;
+	position: relative;
 }
 #nav li{
 	display: inline;
@@ -52,6 +56,7 @@
 }
 a {
 	color:black;
+	text-decoration: none;
 }
 a:visited {
 	color:black;
@@ -121,6 +126,10 @@ li {
 	width:730px;
 	margin:auto;
 }
+#description{
+	width:300px;
+	height: 200px;
+}
 
 #placehold {
 	float: left;
@@ -148,16 +157,25 @@ li {
 	width:1000px;
 	margin:auto;
 }
+#deSpan {
+	display: block;
+}
+#editDescription {
+	width:300px;
+	height: 200px;
+}
 
 #editSubmitBtn {
 	background-color:#3838ea;
 	color: #fff;
-	height:30px;
+	height:37px;
 	width:100px;
 	border:1px solid #F7F7F7;
 	position: absolute;
-	right:160px;
-	top:400px;
+	right:0px;
+	top:1px;
+	display: none;
+
 }
 
 #editForm input {

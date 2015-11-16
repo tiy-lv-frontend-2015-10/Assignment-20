@@ -38,8 +38,10 @@ $(document).ready(function(){
 		$("#memesDiv").show();
 		$("#oneMemeDiv").hide();
 		$("#nav").css("width","730px");
+		$("#placeholder").hide();
 		$("#addForm").hide();
 		$("#editDiv").hide();
+
 
 	})
 
@@ -76,6 +78,7 @@ $(document).ready(function(){
 				$("#memesDiv").hide();
 				$("#oneMemeDiv").show();
 				$("#nav").css("width","1000px");
+				$("#formDiv").hide();
 			}
 	    });
 	});
@@ -87,6 +90,7 @@ $(document).ready(function(){
 		$("#addForm").show();
 		$("#editDiv").hide();
 		$("#nav").css("width","730px");
+		$("#editSubmitBtn").hide();
 	});
 
 	router.on('route:index', function() {
@@ -96,6 +100,7 @@ $(document).ready(function(){
 		$("#formDiv").hide();
 		$("#addForm").hide();
 		$("#editDiv").hide();
+		$("#editSubmitBtn").hide();
 
 
 	});
@@ -114,6 +119,7 @@ $(document).ready(function(){
 		});
 		$("#editSubmitBtn").show();
 		$("#memesDiv").hide();
+		$("#formDiv").hide();
 		$("#oneMemeDiv").hide();
 		$("#editDiv").show();
 		$("#nav").css("width","1000px");
@@ -173,12 +179,25 @@ $(document).ready(function(){
 	 });
 	  
 
-	$("body").on('click',"a", function(e){
+	$("#nav").on('click',"a", function(e){
 	  e.preventDefault();
 	  var href = $(this).attr('href');
 	  href = href.substr(1);
 	  router.navigate(href, {trigger:true});
 	});
+
+	$("#memesDiv").on('click',"a", function(e){
+	  e.preventDefault();
+	  var href = $(this).attr('href');
+	  href = href.substr(1);
+	  router.navigate(href, {trigger:true});
+	});
+
+	$("body").on('click',"button", function(e){
+	  e.preventDefault();
+	  
+	});
+
 
 
 
