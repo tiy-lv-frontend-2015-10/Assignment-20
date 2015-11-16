@@ -110,54 +110,55 @@ router.on('route:edit', function(objectId){
 	});
 
 	router.on('route:add', function(){
-			var photo = new Photo();
-			var addData = {"add":{
-					"url": "",
-					"name": "",
-					"description": "",
-					"username": ""
-				}
-			};
-			var addTemplate = $('#add').text();
-			var addHTML = Mustache.render(addTemplate, addData);
-			$('#single-detail').html(addHTML);
-			$('#photo-grid').hide();
-			$('#add-button').hide();
-				$('#single-detail').on('click', 'a', function(e){
-					e.preventDefault();
-					var addURL = $('#add-url').val();
-					var addName = $('#add-name').val();
-					var addDesc = $('#add-description').val();
-					var addUsername = $('#add-username').val();
-					var href = $(this).attr('href');
-					photo.set({url: addURL,
-										name: addName,
-										description: addDesc,
-										username: addUsername
-									});
-					photo.save({},{
-							success: function(){console.log("saved");},
-							error: function(err){console.log(err);}
-					});
-					photos.add(photo);
-					var newphoto = new Photo();
-					photo.fetch({
-						success: function(resp){
-						  newphoto = resp.toJSON();
-						},
-						error: function(err){
-							console.log(err);
-						}
-					});
-					router.navigate(href, {trigger:true});
+		var photo = new Photo();
+		var addData = {"add":{
+				"url": "",
+				"name": "",
+				"description": "",
+				"username": ""
+			}
+		};
+		var addTemplate = $('#add').text();
+		var addHTML = Mustache.render(addTemplate, addData);
+		$('#single-detail').html(addHTML);
+		$('#photo-grid').hide();
+		$('#add-button').hide();
+			$('#single-detail').on('click', 'a', function(e){
+				e.preventDefault();
+				var addURL = $('#add-url').val();
+				var addName = $('#add-name').val();
+				var addDesc = $('#add-description').val();
+				var addUsername = $('#add-username').val();
+				var href = $(this).attr('href');
+				photo.set({url: addURL,
+									name: addName,
+									description: addDesc,
+									username: addUsername
+								});
+				photo.save({},{
+						success: function(){console.log("saved");},
+						error: function(err){console.log(err);}
 				});
-		});
+				photos.add(photo);
+				var newphoto = new Photo();
+				photo.fetch({
+					success: function(resp){
+						newphoto = resp.toJSON();
+					},
+					error: function(err){
+						console.log(err);
+					}
+				});
+				router.navigate(href, {trigger:true});
+			});
+	});
 
 
 router.on('route:index', function () {
-		$('#photo-grid').show();
-		$('#add-button').show();
-		$('#single-detail').hide();
-	});
+	$('#photo-grid').show();
+	$('#add-button').show();
+	$('#single-detail').hide();
+});
 
 });
+;
