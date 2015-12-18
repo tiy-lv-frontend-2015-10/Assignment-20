@@ -1,3 +1,6 @@
+//require("../css/normalize.css");
+//require("../main.css")
+
 var instagram = Backbone.Model.extend({
     initialize: function() {
         console.log("Amazing places in the planet");
