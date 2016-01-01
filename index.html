@@ -1,74 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
 <link rel="stylesheet" type="text/css" href="index.css">
 <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
 <body>
 
-<h1 id="header">Stargram</h1>
-	
-  <div id="nav">
-    <ul>
-<li><a href = "/">Home</a></li>
-<li><a href = "/add">Add an Image</a></li>
-    </ul>
-  </div>
+	<h1 id="header">Stargram</h1>
+
+	<div id="nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/add">Add an Image</a></li>
+		</ul>
+	</div>
 
 
 
-<!--Mustache image holders-->
-<div id="sith"></div>
-<div id="jedi"></div>
+	<!--Mustache image holders-->
+	<div id="sith"></div>
+	<div id="jedi"></div>
 
-<div id="add" class="hidden">
-
-<form>
-  url: <input type="text" value="" id="url"><br>
-  Description: 
-   <input type="text"  value=""  id="desc"><br>
-   User Name <input type="text" value="" id="name"><br>
-  <input type="submit" value="Submit" id="submit">
-</form>	
-</div>
-
-
-<!--images-->
-<script type="x-tmpl-mustache" id="warsTemplate">
-{{#star}}
-<ul>
-<li><a href="/URL/{{objectId}}"><img src="{{URL}}"/></a></li>
-</ul>
-{{/star}}
-</script>
-
-<!--description and user-->
-<script type="x-tmpl-mustache" id="userinfoTemplate">
-{{#deathstar}}
-<ul>
-<li><a href="/URL/{{objectId}}"><img src="{{URL}}"/></a></li>
-<li id="username">{{Name}}</li>
-<li id="description"><br>{{Description}}<br>
-</ul>
-<form>
-  url: <input type="text" value="{{objectId}}" id="curl"><br>
-  Description: 
-   <input type="text"  value="{{Description}}"  id="cdesc"><br>
-   User Name <input type="text" value="{{Name}}" id="cname"><br>
-  <input type="submit" value="Submit" id="cSubmit">
-</form>		
-{{/deathstar}}
-</script>
+	<div id="add" class="hidden">
+		<form>
+			url:
+			<input type="text" value="" id="url">
+			<br> Description:
+			<input type="text" value="" id="desc">
+			<br> User Name
+			<input type="text" value="" id="name">
+			<br>
+			<input type="submit" value="Submit" id="submit">
+		</form>
+	</div>
 
 
+	<!--images-->
+	<script type="x-tmpl-mustache" id="warsTemplate">
+		{{#star}}
+		<ul>
+			<li>
+				<a href="/URL/{{objectId}}"><img src="{{URL}}" /></a>
+			</li>
+		</ul>
+		{{/star}}
+	</script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
-  <script src="backbone-parse.js"></script>
-  <script src="index.js"></script>
+	<!--description and user-->
+	<script type="x-tmpl-mustache" id="userinfoTemplate">
+		{{#deathstar}}
+		<ul>
+			<li>
+				<a href="/URL/{{objectId}}"><img src="{{URL}}" /></a>
+			</li>
+			<li id="username">{{Name}}</li>
+			<li id="description">
+				<br>{{Description}}
+				<br>
+		</ul>
+		<form>
+			url:
+			<input type="text" value="{{objectId}}" id="curl">
+			<br> Description:
+			<input type="text" value="{{Description}}" id="cdesc">
+			<br> User Name
+			<input type="text" value="{{Name}}" id="cname">
+			<br>
+			<input type="submit" value="Submit" id="cSubmit">
+		</form>
+		{{/deathstar}}
+	</script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+	<script src="backbone-parse.js"></script>
+	<script src="index.js"></script>
 </body>
+
 </html>
