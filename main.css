@@ -1,0 +1,113 @@
+* {
+    font-family: 'Indie Flower', cursive;
+    color:white;
+}
+
+body{
+background-color:black;
+}
+
+
+
+#header {
+    margin: 0 auto;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+nav{
+    height: 40px;
+    margin: 0 auto;
+    background-color:blue;
+    text-align: center;
+    padding: 7px;
+}
+
+nav ul {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header a:hover{
+    color:black;
+    background-color:#3399ff;
+}
+
+
+ul {
+    list-style:none;
+    width:1000px;
+    height:40px;
+}
+
+li a{
+    width: 300px;
+    height:40px;
+    float: left;
+    margin-top: 0px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+  
+}
+
+ul li a{
+    color:white;
+}
+
+#instagram-logo {
+    border-radius: 3px; 
+    size:20px;
+    text-align:center;
+    margin-bottom: 20px;
+
+}
+
+#instagram-logo p {
+    color: #fff;
+    display:inline;
+    font-size: 60px;
+    
+    
+}
+
+#instagram-logo img {
+    width: 47px;
+    height: 47px;
+    margin-left: 15px;
+    margin-bottom: -6px;
+
+}
+
+#photos {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#photos img {
+    
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 25px;
+}
+#photosDetailpage {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#photosDetailpage img{
+    width: 450px;
+    height: 450px;
+    float: left;
+    margin-right: 35px; 
+}
+
+#photosDetailpage div {
+    font-size: 20px;   
+}
+
+#photosDetailpage .photo-description {
+    font-size: 30px;
+}
