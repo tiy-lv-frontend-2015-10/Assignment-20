@@ -12,9 +12,9 @@
   <div id="container">
   <div id="header">
       <h1>ANIMAL PHOTO ALBUM</h1>
-      <a href="/"><input id="homeBtn" class="headerButtons" type="button" name="home" value="Home" size="25"></a>
+      <a class="center" href="/"><input id="homeBtn" class="headerButtons" type="button" name="home" value="Home" size="25"></a>
       <!--<a href="/details"><input class="headerButtons" type="button" name="details" value="Details" size="25"></a>-->
-      <a href="/add"><input class="headerButtons" type="button" name="add" value="Add" size="25"></a>
+      <a class="center" href="/add"><input class="headerButtons" type="button" name="add" value="Add" size="25"></a>
       
   </div>
 
@@ -24,12 +24,16 @@
 
   <div id="addPageDiv" class="hidden">
       <form id="addForm">
+
           <p><label>Copy URL Link Here:</label>
           <input id="saveImg" type="text" value=""></p>
+          
           <p><label>Title:</label>
-          <input id="saveTitle" type="text"  name="Title" value=""></p>
+          <input id="saveTitle" type="text" name="Title" value=""></p>
+
           <p><label>Description:</label>
           <input id="saveDescription" type="text" value=""></p>
+
       </form>
       <a><input id="saveButton" class="addButtons" type="button" name="save" value="Save"></a>
   </div>

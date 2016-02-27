@@ -55,6 +55,10 @@ h1 {
     padding: 0;
 }
 
+.center {
+    margin: auto;
+}
+
 .pushDescDown {
     padding-bottom: 8em;
 }
@@ -98,4 +102,15 @@ h1 {
 
 #addForm {
     padding: 1em;
+    width: 40%;
+}
+
+.floatRight {
+    float: right;
+}
+
+.clearFloat { 
+    clear: both;
+    margin: 0;
+    padding: 0;
 }
